@@ -20,22 +20,31 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - uses: actions/cache@v2
+    
+    - name: Cache `node_modules`
+      uses: actions/cache@v2
       with:
         path: '**/node_modules'
         key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+    
     - name: Yarn Install
-    - run: yarn install
+      run: yarn install
+    
     - name: Lint with Prettier
-    - run: yarn run lint
-    - run: Build with NextJS
-    - run: yarn run build
+      run: yarn run lint
+    
+    - name: Build with NextJS
+      run: yarn run build
+    
     - name: Run Unit Tests with (Unknown)
-    - run: yarn run test:unit
+      run: yarn run test:unit
+    
     - name: Run End to End Tests with Cypress
-    - run: yarn run cypress
+      run: yarn run cypress
