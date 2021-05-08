@@ -39,7 +39,7 @@ jobs:
         run: yarn run lint
 
       - name: Check Typescript
-        if: github.ref == 'refs/heads/typescript'
+        if: github.base_ref == 'refs/heads/typescript'
         run: yarn run types:strict
 
       - name: Build with NextJS
