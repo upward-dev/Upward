@@ -28,7 +28,7 @@ TK We use sequelize to store our database configurations as migrations that we
 use both locally in development (in an SQLite file) and on Heroku (on a
 Postgres database).
 
-### Finally, run the development server:
+### Finally, run the development server
 
 Run `yarn run dev`, then open [http://localhost:3000](http://localhost:3000)
 with your browser to see the result.
@@ -62,12 +62,14 @@ read following the [StandardJS Styleguide](https://standardjs.com/) . You can
 check if your code will pass [our testing
 system's](https://github.com/diffalot/heroku-next-postgres/actions) linting
 step by running `yarn run lint` (which in turn runs `npx prettier .`). If the
-code doesn't pass you can fix many linting errors with `yarn run format` (`npx prettier --write`).
+code doesn't pass you can fix many linting errors with `yarn run format`
+(`npx prettier --write`).
 
 On [the Prettier website](https://prettier.io/) you'll find lots of information
 about plugins and extensions you can install for your text editor (we recommend
 [Visual Studio Code](https://code.visualstudio.com/)) that will automate
-styling your code when you save or as you type, and don't forget about `yarn run format`.
+styling your code when you save or as you type, and don't forget about
+`yarn run format`.
 
 #### Creating a Pull Request on GitHub
 
