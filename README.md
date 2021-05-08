@@ -75,14 +75,28 @@ styling your code when you save or as you type, and don't forget about
 
 ### Advanced Features
 
-#### Typescript
+#### Typescript (completely optional)
 
-[Types Provided By
-NextJS](https://nextjs.org/learn/excel/typescript/nextjs-types)
+Typescript is enabled throughout the project, and to opt in, create a working
+branch where the name of the branch begins with `ts-` or contains the word
+`typescript` (and capitalization matters for both of those).
 
-> Alice: It's really difficult to use typescript half way.... I'm gonna have to
-> think
-> about this one
+> Be forewarned that this process will require writing types for everyone who
+> has elected to not write any types before a branch will pass `tarn types:strict`. So don't surprised, and don't go down this road unless you
+> are specifally looking to practice a lot and overtrain to excell during
+> interviews.
+
+When you begin a branch name with `ts-`, the CI system will run `yarn types:strict` in addition to the other tests. Once the tests all pass, the
+merge button will be available.
+
+For convenience during development, run `yarn watch:types:strict` and the the
+type checker will update the test results every time you save a file.
+
+- Here's [the NextJS intro to the types they
+  provide](https://nextjs.org/learn/excel/typescript/nextjs-types)
+- And here's
+  [an example PR that shows this process in
+  action](https://github.com/code-circles/main-app/pull/9).
 
 ## Learn More
 
