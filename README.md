@@ -28,7 +28,7 @@ TK We use sequelize to store our database configurations as migrations that
 we use both locally in development (in an SQLite file) and on Heroku (on a
 Postgres database).
 
-### First, run the development server:
+### Finally, run the development server:
 
 Run `yarn run dev`, then open [http://localhost:3000](http://localhost:3000)
 with your browser to see the result.
@@ -52,6 +52,9 @@ TK note about mentors helping every step of the way as requested, invitation to
 ask lots of questions in Slack, read other people's code in code reviews,
 etc.....
 
+All of these steps can be run in a single command: `yarn run ci-at-home` if you
+want to know ahead of time if a pull request will pass the checks.
+
 #### Linting Your Code
 
 We use [Prettier](https://prettier.io/) to keep the code uniform and easy to
@@ -66,17 +69,6 @@ On [the Prettier website](https://prettier.io/) you'll find lots of information
 about plugins and extensions you can install for your text editor (we recommend
 [Visual Studio Code](https://code.visualstudio.com/)) that will automate
 styling your code when you save or as you type, and don't forget about `yarn run format`.
-
-#### Running Unit Tests
-
-We write unit tests for all our API and some of the React frontend. We don't
-have an API yet, but it will be tested when it arrives.
-
-#### Running Cypress Tests
-
-The React user interface is tested with Cypress to make sure that the front end
-is always working well, especially the fragile parts that we don't update very
-often but are used frequently.
 
 #### Creating a Pull Request on GitHub
 

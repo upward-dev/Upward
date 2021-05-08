@@ -40,9 +40,3 @@ jobs:
 
       - name: Build with NextJS
         run: yarn run build
-
-      - name: Run Unit Tests with (Unknown)
-        run: yarn run test:unit
-
-      - name: Run End to End Tests with Cypress
-        run: yarn run cypress
