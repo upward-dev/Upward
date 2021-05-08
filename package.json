@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "prettier --debug-check .",
     "format": "prettier --write .",
-    "ci-at-home": "run-s lint build"
+    "ci-at-home": "run-s lint build",
+    "types:strict": "npx tsc --strict",
+    "watch:types:strict": "yarn types:strict --watch"
   },
   "dependencies": {
     "next": "10.2.0",

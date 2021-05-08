@@ -38,5 +38,9 @@ jobs:
       - name: Lint with Prettier
         run: yarn run lint
 
+      - name: Check Typescript
+        if: github.ref == 'refs/heads/typescript'
+        run: yarn run types:strict
+
       - name: Build with NextJS
         run: yarn run build
