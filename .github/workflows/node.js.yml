@@ -38,5 +38,9 @@ jobs:
       - name: Lint with Prettier
         run: yarn run lint
 
+      - name: Check Typescript
+        if: ${{ startsWith('ts-', github.head_ref) || contains('typescript', github.head_ref) }}
+        run: yarn run types:strict
+
       - name: Build with NextJS
         run: yarn run build
