@@ -72,7 +72,12 @@ styling your code when you save or as you type, and don't forget about `yarn run
 
 #### Creating a Pull Request on GitHub
 
-TK
+### Advanced Features
+
+#### Typescript
+
+Alice: It's really difficult to use typescript half way.... I'm gonna have to think
+about this one
 
 ## Learn More
 
