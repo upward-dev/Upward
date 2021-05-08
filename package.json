@@ -1,0 +1,23 @@
+{
+  "name": "heroku-next-postgres",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "prettier --debug-check .",
+    "format": "prettier --write .",
+    "ci-at-home": "run-s lint build"
+  },
+  "dependencies": {
+    "next": "10.2.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "prettier-config-standard": "^4.0.0"
+  }
+}
