@@ -63,12 +63,29 @@ jobs:
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
-      - name: Check Typescript
-        if: ${{ startsWith('ts-', $HEAD_BRANCH) || contains('typescript', $HEAD_BRANCH) }}
-        run: yarn run types:strict
-        env:
-          HEAD_BRANCH: ${{ steps.extract_branch.outputs.branch }}
+        # For a long time the following looked very reasonable to me because I
+        # didn't understand that the `if` runs before the step is assigned to a
+        # runner, so the local $HEAD_BRANCH variable is not available when the
+        # `if` runs the check. 
+        #
+        #    - name: Check Typescript
+        #      if: ${{ startsWith('ts-', $HEAD_BRANCH) || contains('typescript', $HEAD_BRANCH) }}
+        #      run: yarn run types:strict
+        #      env:
+        #        HEAD_BRANCH: ${{ steps.extract_branch.outputs.branch }}
+        #
+        # Instead we have to use the `steps` context
+        # which is available to us in both the job scheduler that assigns steps
+        # to machines and the runners who run the tests.
 
+      - name: Check Typescript
+        if: ${{ startsWith('ts-', steps.extract_branch.outputs.branch) || contains('typescript', steps.extract_branch.outputs.branch) }}
+        run: yarn run types:strict
+
+        # * https://docs.github.com/en/actions/reference/events-that-trigger-workflows
+        # * https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions
+        # * https://docs.github.com/en/actions/reference/environment-variables
+        # * https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions
         ########################################################################
 
       - name: Build with NextJS
