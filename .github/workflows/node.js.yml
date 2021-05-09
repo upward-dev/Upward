@@ -44,9 +44,32 @@ jobs:
       - name: Lint with Prettier
         run: yarn run lint
 
+        ########################################################################
+        # Optional Typescript Strict Type Checking
+        #
+        # Wow... There is a finely nuanced difference between a pull_request
+        # event and a push event, I believe the pull request event happens only
+        # at the time of pull request creation.  Pushing to a branch that is
+        # part of a pull request is just a push event. Here's a easy to see
+        # what data you have access to in the github context:
+        #
+        #    - name: GitHub Context
+        #      env:
+        #        GITHUB_CONTEXT: ${{ toJSON(github) }}
+        #      run: echo "$GITHUB_CONTEXT"
+
+      - name: Extract Head Ref Branch
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
       - name: Check Typescript
-        if: ${{ startsWith('ts-', github.head_ref) || contains('typescript', github.head_ref) }}
+        if: ${{ startsWith('ts-', $HEAD_BRANCH) || contains('typescript', $HEAD_BRANCH) }}
         run: yarn run types:strict
+        env:
+          HEAD_BRANCH: ${{ steps.extract_branch.outputs.branch }}
+
+        ########################################################################
 
       - name: Build with NextJS
         run: yarn run build
