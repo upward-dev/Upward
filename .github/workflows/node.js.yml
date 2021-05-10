@@ -78,7 +78,7 @@ jobs:
         # which is available to us in both the job scheduler that assigns steps
         # to machines and the runners who run the tests.
 
-      - name: Check Typescript
+      - name: Strict Typescript Check
         if: ${{ startsWith('ts-', steps.extract_branch.outputs.branch) || contains('typescript', steps.extract_branch.outputs.branch) }}
         run: yarn run types:strict
 
