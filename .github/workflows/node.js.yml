@@ -66,7 +66,7 @@ jobs:
         # For a long time the following looked very reasonable to me because I
         # didn't understand that the `if` runs before the step is assigned to a
         # runner, so the local $HEAD_BRANCH variable is not available when the
-        # `if` runs the check. 
+        # `if` runs the check.
         #
         #    - name: Check Typescript
         #      if: ${{ startsWith('ts-', $HEAD_BRANCH) || contains('typescript', $HEAD_BRANCH) }}
