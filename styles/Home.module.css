@@ -1,11 +1,16 @@
+@value colors: './colors.css';
+@value primary-base, primary-light, primary-dark, secondary-base, secondary-light, tertiary-base, fourth-base, fifth-base, highlight, neutral, background from colors;
+
 .container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 .main {
@@ -15,6 +20,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.logo {
+  display: inline;
+  margin-top: -120px;
+  position: relative;
+  z-index: -1;
 }
 
 .footer {
@@ -34,7 +46,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: primary-dark;
   text-decoration: none;
 }
 
@@ -58,6 +70,7 @@
 .description {
   line-height: 1.5;
   font-size: 1.5rem;
+  padding: 0 0.5rem;
 }
 
 .code {
@@ -74,41 +87,82 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
   margin-top: 3rem;
 }
 
-.card {
-  margin: 1rem;
+.section {
+  width: 100%;
   padding: 1.5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 45%;
+  min-height: 215px;
+  background-color: secondary-base;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.section:hover,
+.section:focus,
+.section:active {
+  /* color: primary-base; */
+  border-color: primary-base;
+  background-color: primary-base;
 }
 
-.card h2 {
+.section.first {
+  background-color: primary-base;
+}
+
+.section.second {
+  background-color: secondary-base;
+}
+
+.section.third {
+  background-color: tertiary-base;
+}
+
+.section.fourth {
+  background-color: fourth-base;
+}
+
+.circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: tertiary-base;
+  border: 1px solid tertiary-base;
+  border-radius: 100%;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  width: 350px;
+  height: 350px;
+  background-color: secondary-light;
+}
+
+.circle:hover,
+.circle:focus,
+.circle:active {
+  color: black;
+  border-color: primary-base;
+  background-color: primary-base;
+}
+
+.circle h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
 }
 
-.card p {
+.circle p {
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
 }
 
-.logo {
+.vercelLogo {
   height: 1em;
   margin-left: 0.5rem;
 }
