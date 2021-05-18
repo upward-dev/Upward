@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../styles/Home.module.css'
 import SpotlightCard from '../src/components/SpotlightCard/SpotlightCard'
 
-function About(props) {
+function About(props: any) {
   return (
     <div className={styles.main}>
       <h1 className={styles.title}>About Us</h1>
