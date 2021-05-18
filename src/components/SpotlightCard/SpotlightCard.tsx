@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './SpotlightCard.module.css'
 
-function SpotlightCard(props) {
+function SpotlightCard(props: any) {
   return (
     <div className={styles.spotlightCard}>
       <img
