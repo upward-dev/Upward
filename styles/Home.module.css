@@ -22,9 +22,16 @@
   align-items: center;
 }
 
+.masthead {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
 .logo {
-  display: inline;
+  display: block;
   margin-top: -120px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   z-index: -1;
 }
@@ -134,8 +141,6 @@
   padding: 1.5rem;
   text-align: center;
   text-decoration: none;
-  color: tertiary-base;
-  border: 1px solid tertiary-base;
   border-radius: 100%;
   transition: color 0.15s ease, border-color 0.15s ease;
   width: 350px;
@@ -147,7 +152,6 @@
 .circle:focus,
 .circle:active {
   color: black;
-  border-color: primary-base;
   background-color: primary-base;
 }
 
@@ -165,6 +169,24 @@
 .vercelLogo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.aboutDescription {
+  display: flex;
+  background-color: secondary-light;
+  min-height: 300px;
+}
+
+.aboutDescription p {
+  font-size: 32px;
+  padding: 3rem;
+  text-align: center;
+  height: 100%;
+  margin: auto;
+}
+
+.people {
+  background-color: primary-light;
 }
 
 @media (max-width: 600px) {

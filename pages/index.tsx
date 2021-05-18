@@ -13,11 +13,13 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Code Circles</h1>
-        <img
-          src="/code-circles-icon.png"
-          alt="two circles"
-          className={styles.logo}></img>
+        <div className={styles.masthead}>
+          <h1 className={styles.title}>Code Circles</h1>
+          <img
+            src="/code-circles-icon.png"
+            alt="two circles"
+            className={styles.logo}></img>
+        </div>
 
         <p className={styles.description}>
           Advancing women in tech through study groups and mentorship. This
