@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import SpotlightCard from '../src/components/SpotlightCard/SpotlightCard'
 
-function About(props: any) {
+function About() {
   return (
     <div>
       <Head>
