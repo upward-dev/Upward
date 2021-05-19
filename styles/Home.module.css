@@ -149,7 +149,6 @@
 }
 
 .circle:hover,
-.circle:focus,
 .circle:active {
   color: black;
   background-color: primary-base;
@@ -167,17 +166,23 @@
 }
 
 .aboutDescription {
-  display: flex;
+  display: flex row;
   background-color: secondary-light;
   min-height: 300px;
 }
 
 .aboutDescription p {
-  font-size: 32px;
-  padding: 3rem;
+  font-size: 24px;
   text-align: center;
   height: 100%;
   margin: auto;
+  padding: 3rem;
+  padding-bottom: 2rem;
+}
+
+.aboutDescription p:last-of-type {
+  padding-top: 0;
+  padding-bottom: 3rem;
 }
 
 .people {
