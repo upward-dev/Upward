@@ -10,11 +10,11 @@
 
 .row {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .main {
-  padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,7 @@
 }
 
 .masthead {
+  padding-top: 5rem;
   margin-bottom: 30px;
   width: 100%;
 }
@@ -187,6 +188,7 @@
 
 .people {
   background-color: primary-light;
+  width: 100%;
 }
 
 @media (max-width: 600px) {
