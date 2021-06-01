@@ -12,22 +12,22 @@ export default function Home() {
         <link rel="icon" href="/upward-logo.png" />
       </Head>
 
-      <div class=" text-center">
+      <div className="text-center">
 
         <img
           src="/upward-logo.png"
           alt="Upward"
-          class="icon-small"></img>
-          <h1 class="title">Upward</h1>
+          className="icon-small"></img>
+          <h1 className="title">Upward</h1>
 
 
         <p>
           Our mission is to advance women in tech. We provide this platform to help you land an awesome role!
         </p>
 
-        <div class="container">
-          <div class="row">
-            <div class="col-sm">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm">
               
                 <h4>Sign Up</h4>
                 <a
@@ -39,7 +39,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div class="col-sm">
+            <div className="col-sm">
            
               <h4>Find Your Next Role</h4>
             <a

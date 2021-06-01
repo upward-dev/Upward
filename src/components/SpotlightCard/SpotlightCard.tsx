@@ -8,7 +8,7 @@ function SpotlightCard(props: any) {
   const { name, image, role, linkedin, bio } = props
 
   return (
-    <div class="col-sm text-center">
+    <div className="col-sm text-center">
       <img src={image} alt={name} className={customStyles.profilePic}></img>
       <h4>{name}</h4>
       <h5>{role}</h5>
