@@ -1,20 +1,21 @@
 import React from 'react'
-import styles from './SpotlightCard.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import customStyles from './SpotlightCard.module.scss'
+
 
 function SpotlightCard(props: any) {
   const { name, image, role, linkedin, bio } = props
 
   return (
-    <div className={styles.spotlightCard}>
-      <img src={image} alt={name} className={styles.profilePic}></img>
-      <h2>{name}</h2>
-      <h3>{role}</h3>
+    <div class="col-sm text-center">
+      <img src={image} alt={name} className={customStyles.profilePic}></img>
+      <h4>{name}</h4>
+      <h5>{role}</h5>
       <a href={linkedin}>
         <FontAwesomeIcon
           icon={faLinkedin}
-          className={styles.icon}
+          className={customStyles.icon}
           title="LinkedIn"
         />
       </a>
