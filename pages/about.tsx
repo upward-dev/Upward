@@ -11,12 +11,12 @@ function About() {
         <meta name="description" content="Advancing women in tech" />
         <link rel="icon" href="/upward-logo.png"/>
       </Head>
-      <div class="container text-center">
+      <div className="container text-center">
         <div>
             <img
             src="/upward-logo.png"
             alt="Upward"
-            class="icon-small"></img>
+            className="icon-small"></img>
         </div>
         <h1>About Us</h1>
 
@@ -37,8 +37,8 @@ function About() {
             support as you find your next role with Upward.
           </p>
         </div>
-        <div class="container">
-          <div class="row">
+        <div className="container">
+          <div className="row">
             <SpotlightCard
               name="Mariane Bekker"
               image="/marianebekker.jpeg"
