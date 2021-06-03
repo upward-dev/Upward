@@ -12,11 +12,6 @@ export default function Home({users}) {
         <meta name="description" content="Advancing women in tech" />
         <link rel="icon" href="/upward-logo.png" />
       </Head>
-{/*      <ul> 
-       {users.map(user => (
-         <li key={user.id}>{user.email}</li>
-        ))}
-      </ul>*/}
 
       <div className="text-center">
 
@@ -67,7 +62,7 @@ export default function Home({users}) {
     </div>
   )
 }
-// Fetch all posts (in /pages/index.tsx)
+// Fetch all users (in /pages/index.tsx) - Example calling the database
 export async function getStaticProps() {
   const users = await prisma.user.findMany()
   return {
