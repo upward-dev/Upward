@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-
-import SpotlightCard from '../src/components/SpotlightCard/SpotlightCard'
+import SpotlightCard from '../components/SpotlightCard'
 
 function About() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import customStyles from './SpotlightCard.module.scss'
+import customStyles from '../styles/SpotlightCard.module.scss'
 
 
 function SpotlightCard(props: any) {

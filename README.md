@@ -106,3 +106,8 @@ React Resources:
 
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
 - [W3Schools React Tutorial](https://www.w3schools.com/react/)
+
+## Styles
+
+- [BootStrapp-Sass](https://getbootstrap.com/docs/5.0/customize/sass/)
+-
