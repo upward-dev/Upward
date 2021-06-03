@@ -95,3 +95,14 @@ To learn more about Next.js, take a look at the following resources:
 You can check out [the Next.js GitHub
 repository](https://github.com/vercel/next.js/) - your feedback and
 contributions are welcome!
+
+Node Resources:
+
+- [Node.js Documentation](https://nodejs.org/en/docs/)
+- [Learn Node.js](https://nodejs.dev/learn)
+- [W3Schools Node.js tutorial](https://www.w3schools.com/nodejs/nodejs_intro.asp)
+
+React Resources:
+
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [W3Schools React Tutorial](https://www.w3schools.com/react/)
