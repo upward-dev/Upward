@@ -11,12 +11,7 @@ function About() {
         <link rel="icon" href="/upward-logo.png"/>
       </Head>
       <div className="container text-center">
-        <div>
-            <img
-            src="/upward-logo.png"
-            alt="Upward"
-            className="icon-small"></img>
-        </div>
+   
         <h1>About Us</h1>
 
         <div>

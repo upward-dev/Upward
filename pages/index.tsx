@@ -3,24 +3,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
+
+
 export default function Home() {
   return (
     <div className="container">
       <Head>
         <title>Upward</title>
         <meta name="description" content="Advancing women in tech" />
-        <link rel="icon" href="/upward-logo.png" />
       </Head>
 
       <div className="text-center">
-
-        <img
-          src="/upward-logo.png"
-          alt="Upward"
-          className="icon-small"></img>
+       
           <h1 className="title">Upward</h1>
-
-
         <p>
           Our mission is to advance women in tech. We provide this platform to help you land an awesome role!
         </p>
@@ -53,9 +48,6 @@ export default function Home() {
             </a>
           </div>
           </div>
-
-
-
         </div>
       </div>
     </div>
