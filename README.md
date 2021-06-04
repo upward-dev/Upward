@@ -28,13 +28,20 @@ Create a .env file and add:
 
 DATABASE_URL="postgres://bajeonmlxpbfdq:bbe0a9d989587bb4c4b66aac1c3e4c0af75f8347c0b6128e1bb7d2a8fbc213d7@ec2-3-214-136-47.compute-1.amazonaws.com:5432/d1p1l0ndqdjtj4"
 
-We use [prisma](https://www.prisma.io/nextjs#nextjs-tabs) as an ORM to postgres to connect directly to the database. See example in index.tsx
+We use [prisma](https://www.prisma.io/nextjs#nextjs-tabs) as an ORM to postgres to connect directly to the database. See example in index.tsx. 
+
+Prisma schema can be found [here](./prisma/schema.prisma)
 
 Download the [prisma studio](https://github.com/prisma/studio/releases) to connect directly to the heroku database:
 
-For development: we use prisma to connect to a heroku database on staging
+For development:
 
-npx prisma generate 
+* Prisma will connect to a heroku database on staging. To updated the staging database do: 
+
+* npx prisma db push (upload the changed schema)
+
+* npx prisma generate (regenrate all the tables)
+
 
 
 ### Finally, run the development server
