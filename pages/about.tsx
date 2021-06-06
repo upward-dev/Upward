@@ -8,12 +8,10 @@ function About() {
       <Head>
         <title>Upward</title>
         <meta name="description" content="Advancing women in tech" />
-        <link rel="icon" href="/upward-logo.png"/>
+        <link rel="icon" href="/upward-logo.png" />
       </Head>
-      <div className="container text-center">
-   
+      <div className="container text-center page-margin-top">
         <h1>About Us</h1>
-
         <div>
           <p>
             This diversity project started to help give engineers{' '}
