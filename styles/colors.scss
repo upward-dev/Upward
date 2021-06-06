@@ -1,3 +1,4 @@
+//Upward Color Theme:
 $primary-base: #f3ced6;
 $primary-light: #fbeff1;
 $primary-dark: #bfa3a9;
@@ -9,4 +10,22 @@ $fifth-base: #b6e2f2;
 $neutral: #736265;
 $highlight: #f4869e;
 $background: #733f4a;
+
+
+//Overrides:
+$body-color: #111;
+
+$theme-colors: (
+   primary: #f3ced6,
+);
+@import "~bootstrap/scss/bootstrap";
+
+.btn-primary {
+    background: $primary-base
+}
+
+
+// Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 
