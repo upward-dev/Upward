@@ -10,7 +10,10 @@
     "format": "prettier --write .",
     "ci-at-home": "run-s lint build",
     "types:strict": "npx tsc --strict",
-    "watch:types:strict": "yarn types:strict --watch"
+    "watch:types:strict": "yarn types:strict --watch",
+    "create-db": "./ops/create-db.sh",
+    "migrate-db": "npx prisma generate dev",
+    "update-db": "npx prisma db push"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

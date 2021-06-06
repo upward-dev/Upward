@@ -24,17 +24,28 @@ first step in troubleshooting to fix things.
 
 ### Next, run the database migrations
 
-Create a .env file and add:
+Please refer to the [local development](docs/local-dev.md) document for details about how to get Docker running on your machine if you don't have it.
 
-DATABASE_URL="postgres://bajeonmlxpbfdq:bbe0a9d989587bb4c4b66aac1c3e4c0af75f8347c0b6128e1bb7d2a8fbc213d7@ec2-3-214-136-47.compute-1.amazonaws.com:5432/d1p1l0ndqdjtj4"
+To create a local Docker container running your postgres instance, type:
+
+```sh
+npm run create-db
+```
 
 We use [prisma](https://www.prisma.io/nextjs#nextjs-tabs) as an ORM to postgres to connect directly to the database. See example in index.tsx
 
 Download the [prisma studio](https://github.com/prisma/studio/releases) to connect directly to the heroku database:
 
-For development: we use prisma to connect to a heroku database on staging
+For development: prisma will connect to your local Docker container
 
-npx prisma generate 
+To update your database schema without generating a new migration (for prototyping data changes):
+
+
+To generate and run all migrations:
+
+```sh
+npm run migrate-db
+```
 
 
 ### Finally, run the development server
