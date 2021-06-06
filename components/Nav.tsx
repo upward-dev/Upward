@@ -6,7 +6,7 @@ const Nav = () => {
           <img src="/upward-logo.png" width="150" alt="upward-logo"></img>
         </a>
         {/* 
-        **** button for when we add more documents do NOT delete!
+        **** button for when we add more documents DO NOT delete!
         <button
           className="navbar-toggler primary"
           type="button"
@@ -25,7 +25,7 @@ const Nav = () => {
                 About
               </a>
             </li>
-            <li style={{ backgroundColor: '#f3ced6', borderRadius: 10 }}>
+            <li style={{ backgroundColor: '#f3ced6', borderRadius: 5 }}>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSe5XunCtzemmzIZK9VTRMgoueC4_9Q8Ay1PycGxEa5uXgCjNg/viewform"
                 className="btn btn- active"

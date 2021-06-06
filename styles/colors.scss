@@ -16,14 +16,9 @@ $background: #733f4a;
 $body-color: #111;
 
 $theme-colors: (
-   primary: #f3ced6,
+   secondary:#fbeff1,
 );
 @import "~bootstrap/scss/bootstrap";
-
-.btn-primary {
-    background: $primary-base
-}
-
 
 // Bootstrap and its default variables
 @import "../node_modules/bootstrap/scss/bootstrap";
