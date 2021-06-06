@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import prisma from '../lib/prisma'
 
 
-export default function Home() {
+export default function Home({users}) {
   return (
     <div className="container">
       <Head>
@@ -11,6 +12,11 @@ export default function Home() {
         <meta name="description" content="Advancing women in tech" />
         <link rel="icon" href="/upward-logo.png" />
       </Head>
+{/*      <ul> 
+       {users.map(user => (
+         <li key={user.id}>{user.email}</li>
+        ))}
+      </ul>*/}
 
       <div className="text-center">
 
@@ -61,5 +67,10 @@ export default function Home() {
     </div>
   )
 }
-
-
+// Fetch all posts (in /pages/index.tsx)
+export async function getStaticProps() {
+  const users = await prisma.user.findMany()
+  return {
+    props : { users }
+  }
+}
