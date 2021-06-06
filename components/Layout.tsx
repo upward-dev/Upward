@@ -1,7 +1,12 @@
 import Nav from './Nav'
+import React, { ReactNode } from 'react'
 // import Meta from "./Meta";
 
-const Layout = ({ children }) => {
+type Props = {
+  children?: ReactNode
+}
+
+const Layout = ({ children }: Props) => {
   return (
     <>
       {/* <Meta /> */}
