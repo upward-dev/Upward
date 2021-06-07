@@ -9,9 +9,9 @@ function SpotlightCard(props: any) {
 
   return (
     <div className="col-sm text-center">
-      <img src={image} alt={name} className={customStyles.profilePic}></img>
+      {image ? <img src={image} alt={name} className={customStyles.profilePic}></img> : ""}
       <h4>{name}</h4>
-      <h5>{role}</h5>
+      {role ? <h5>{role}</h5> : ""}
       <a href={linkedin}>
         <FontAwesomeIcon
           icon={faLinkedin}

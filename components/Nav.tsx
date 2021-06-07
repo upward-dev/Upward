@@ -3,7 +3,7 @@ const Nav = () => {
     <nav className="navbar navbar-expand-sm fixed-top navbar-light bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
-          <img src="/upward-logo.png" width="150" alt="upward-logo"></img>
+          <img src="/upward-logo.svg" width="150" alt="upward-logo"></img>
         </a>
         {/* 
         **** button for when we add more documents DO NOT delete!
@@ -27,11 +27,11 @@ const Nav = () => {
             </li>
             <li style={{ backgroundColor: '#f3ced6', borderRadius: 5 }}>
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSe5XunCtzemmzIZK9VTRMgoueC4_9Q8Ay1PycGxEa5uXgCjNg/viewform"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdC-AbV2SNhMS99yhY6r4Gu34UC9DhVWIM7utII6irV1pyaSw/viewform"
                 className="btn btn- active"
                 style={{ color: 'black' }}>
                 <i className="glyphicon-floppy-disk" aria-hidden="true"></i>
-                Sign Up
+                Join the waitlist
               </a>
             </li>
           </ul>

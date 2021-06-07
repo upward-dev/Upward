@@ -20,33 +20,23 @@ export default function Home() {
 
             <div className="col-lg">
               <h1 className="title" style={{ marginTop: 40 }}>
-                Upward
+                Find an awesome role
               </h1>
               <p>
-                Our mission is to advance women in tech. We provide this
-                platform to help you land an awesome role!
+                Our mission is to advance women in tech through mentorship during the job search process.
               </p>
-              <h4>Find Your Next Role</h4>
               <p>
-                Request to get connected directly with hiring managers at fast
-                growing, inclusive and diverse startups and request to be part
-                of a study group.
+                Join the waitlist to receive career coaching from engineering leaders, prepare for technical interviews and connect with hiring managers at fast growing, inclusive and diverse startups.
               </p>
-
               <div>
-                <a href="https://forms.gle/bXWayRQiW6V5UJxE6" target="_blank">
-                  <button type="button" className="btn btn-secondary">
-                    Sign Up
-                  </button>
-                </a>
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdC-AbV2SNhMS99yhY6r4Gu34UC9DhVWIM7utII6irV1pyaSw/viewform"
                   target="_blank">
                   <button
-                    style={{ marginLeft: 10 }}
+    
                     type="button"
                     className="btn btn-secondary">
-                    Connect Form
+                    Join the waitlist
                   </button>
                 </a>
               </div>
@@ -58,10 +48,11 @@ export default function Home() {
   )
 }
 
-// Fetch all users (in /pages/index.tsx) - Example calling the database
-export async function getStaticProps() {
-  const users = await prisma.user.findMany()
-  return {
-    props : { users }
-  }
-}
+//Example of fetching users from prisma
+// // Fetch all users (in /pages/index.tsx) - Example calling the database
+// export async function getStaticProps() {
+//   const users = await prisma.user.findMany()
+//   return {
+//     props : { users }
+//   }
+// }
