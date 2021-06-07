@@ -21,8 +21,7 @@ export const LINKEDIN_URL = getURLWithQueryParams(
     scope: LINKEDIN_SCOPE
   }
 )
-export const linkedin = async (code) => {
-  ('code', code)
+export const LINKEDIN_OAUTH = async (code) => {
     const LINKEDIN_URL = getURLWithQueryParams(
         "https://www.linkedin.com/oauth/v2/accessToken",
         {
@@ -39,18 +38,16 @@ export const linkedin = async (code) => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" }
       });
   tok = await resp.json();   
-  let { access_token, expires_in } = tok;
-    let u = {};
  let usr = await fetch("https://cors-anywhere.herokuapp.com/https://api.linkedin.com/v2/me", {
  method: "GET",
   headers: {
-    "Authorization":  `Bearer ${access_token}`,  
+    "Authorization":  `Bearer ${tok.access_token}`,  
   }
  })
-u = await usr.json();
+let u = await usr.json();
   if (u.localizedFirstName) {
-    res.redirect('/me')
+    console.log('first name', u.localizedFirstName)
   }
 };
 
-export default linkedin;
+export default LINKEDIN_OAUTH;
