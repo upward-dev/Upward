@@ -5,7 +5,7 @@ import {LINKEDIN_OAUTH} from '../pages/api/linkedin'
 const Me = () => {
   const router = useRouter(); 
   if (router.query.code) {  
-  LINKEDIN_OAUTH(router.query.code)
+    LINKEDIN_OAUTH(router.query.code)
   }
   return (
     <div>
