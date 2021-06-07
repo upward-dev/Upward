@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import customStyles from './SpotlightCard.module.scss'
+import customStyles from '../styles/SpotlightCard.module.scss'
 
 
 function SpotlightCard(props: any) {
@@ -9,9 +9,9 @@ function SpotlightCard(props: any) {
 
   return (
     <div className="col-sm text-center">
-      <img src={image} alt={name} className={customStyles.profilePic}></img>
+      {image ? <img src={image} alt={name} className={customStyles.profilePic}></img> : ""}
       <h4>{name}</h4>
-      <h5>{role}</h5>
+      {role ? <h5>{role}</h5> : ""}
       <a href={linkedin}>
         <FontAwesomeIcon
           icon={faLinkedin}
