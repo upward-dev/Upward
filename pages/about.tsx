@@ -38,12 +38,6 @@ function About() {
               linkedin="https://www.linkedin.com/in/marianebekker/"
               bio="Mariane is a software engineer leader with over a decade of experience mentoring software engineers. She started her career as a software engineer after graduating from McGill University in Canada and then moved to San Francisco.  Her passion and super power is mentoring other women in tech to close the gender gap."></SpotlightCard>
             <SpotlightCard
-              name="Alice Davis"
-              role="Lead Software Engineer"
-              image="/alicedavis.jpg"
-              linkedin="https://www.linkedin.com/in/diffalot/"
-              bio="Alice aims to contribute to secured and anonymized, in-browser communications and data sharing platforms built on open web standards to amplify voices of marginalized communities. She prioritizes mentoring members of marginalized groups as they pursue commerce as web developers and entrepreneurs. She really likes making websites, native applications, and embedded devices that make people's lives easier and safer."></SpotlightCard>
-            <SpotlightCard
               name="Louise Lehman"
               role="Lead Software Engineer"
               image="/louiselehman.jpeg"

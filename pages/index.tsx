@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import prisma from '../lib/prisma'
 
-export default function Home({users}) {
+export default function Home() {
   return (
     <div className="container">
       <Head>
