@@ -1,6 +1,9 @@
 import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
+import prisma from '../lib/prisma'
 
-export default function Home() {
+export default function Home({users}) {
   return (
     <div className="container">
       <Head>
@@ -53,4 +56,12 @@ export default function Home() {
       </div>
     </div>
   )
+}
+
+// Fetch all users (in /pages/index.tsx) - Example calling the database
+export async function getStaticProps() {
+  const users = await prisma.user.findMany()
+  return {
+    props : { users }
+  }
 }

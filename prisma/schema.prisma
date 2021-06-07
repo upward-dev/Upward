@@ -1,0 +1,206 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                    Int      @id @default(autoincrement())
+  firstName             String?
+  lastName              String?
+  createdAt             DateTime @default(now())  @map("created_at")
+  updatedAt             DateTime @updatedAt       @map("updated_at")
+  authenticationMethod  AuthenticationMethod      @default(SELF)
+  role                  Role                      @default(USER)
+  profile               Profile?
+  tasks                 Task[]
+  @@map("users")
+}
+
+model Profile {
+  id                Int        @id @default(autoincrement())
+  user              User       @relation(fields: [userId], references: [id])
+  userId            Int
+  roleType          RoleType[]
+  yearsOfExperience Int
+  frontEndLanguages FrontEndLanguage[]
+  backEndLanguages  BackendLanguage[]
+  databases         Database[]
+  locationsWanted   LocationWanted[]
+  minimumSalary     Int
+  maximumSalary     Int
+  calendlyLink      String?
+  projects          Project[]
+  experiences       Experience[]
+  linkedinUrl       String?
+  githubLink        String?
+  visaType          VisaType
+}
+
+model Task {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title              String   @db.VarChar(255)
+  description        String   @db.VarChar(255)
+  author             User?    @relation(fields: [authorId], references: [id])
+  authorId           Int?
+  status             TaskStatus  @default(OPEN)
+}
+
+model Project {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title              String   @db.VarChar(255)
+  description        String   @db.VarChar(255)
+  url                String?
+  from               DateTime
+  to                 DateTime
+  profile            Profile?    @relation(fields: [profileId], references: [id])
+  profileId          Int?
+}
+
+model Experience {
+  id               Int      @id @default(autoincrement())
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  userTitle        String   
+  accomplishments  String 
+  location         String
+  from             DateTime
+  to               DateTime
+  profile          Profile?    @relation(fields: [profileId], references: [id])
+  profileId        Int?
+  type             ExperienceType
+}
+
+model RoleType {
+  id      Int               @id @default(autoincrement())
+  type    RoleDescription   @default(FULLSTACK)
+  profile Profile[]         @relation(references: [id])
+}
+
+model FrontEndLanguage  {
+  id          Int               @id @default(autoincrement())
+  language    FrontendLanguages  
+  profile     Profile[]         @relation(references: [id])
+}
+
+model BackendLanguage  {
+  id          Int                @id @default(autoincrement())
+  language    BackendLanguages  
+  profile     Profile[]          @relation(references: [id])
+}
+
+model Database {
+  id          Int                 @id @default(autoincrement())
+  language    DatabaseLanguages  
+  profile     Profile[]           @relation(references: [id])
+}
+
+model LocationWanted {
+  id                  Int               @id @default(autoincrement())
+  location            Locations  
+  profile Profile[]   @relation(references: [id])
+}
+
+enum ExperienceType {
+  FULL_TIME
+  PART_TIME
+  CONTRACT
+}
+
+enum VisaType {
+  NEW_H1B
+  TRANSFER_H1B
+  TN_VISA
+  F1
+  NONE
+}
+
+enum Locations {
+  REMOTE
+  BAY_AREA
+  NEW_YORK
+  AUSTIN
+  DENVER
+  SEATTLE
+  BOSTON
+  WASHINGTON
+  SAN_DIEGO
+  LOS_ANGELES
+  DALLAS
+  CHICAGO
+  HOUSTON
+  PHOENIX
+  PHILADELPHIA
+}
+
+enum BackendLanguages {
+  NODE
+  NEST
+  PHP
+  RUBY
+  RAILS
+  PYTHON
+  DJANGO
+  CSHARP
+  DOTNET
+  KUBERNETES
+  DOCKER
+  AWS
+}
+
+enum DatabaseLanguages {
+  SQL
+  NOSQL
+  MANGODB
+  POSTGRES
+  ORACLE
+}
+
+enum FrontendLanguages {
+  REACT
+  JAVASCRIPT
+  VUE
+  ANGULAR
+  NEXT
+  EMBER
+}
+
+enum RoleDescription {
+  FRONTEND
+  BACKEND 
+  FULLSTACK
+  MANAGER
+  DIRECTOR
+  VPE
+  MACHINE_LEARNING
+  DATA_SCIENCE
+  INFRASTRUCTURE
+  SRE
+  DEVOPS
+  QA
+  QA_MANAGER
+}
+
+enum Role {
+  USER
+  EMPLOYER
+  MENTOR
+  ADMIN
+}
+enum AuthenticationMethod {
+  SELF
+  LINKEDIN
+}
+
+enum TaskStatus {
+  OPEN
+  DELETED
+  COMPLETED
+}
