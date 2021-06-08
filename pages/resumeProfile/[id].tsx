@@ -2,7 +2,6 @@ import { useRouter } from 'next/dist/client/router';
 import { route } from 'next/dist/next-server/server/router'
 import React, { useEffect, useState } from 'react'
 
-
 // needs to be replaced with real api call for data for final
 enum Role {
     USER = 'User',
