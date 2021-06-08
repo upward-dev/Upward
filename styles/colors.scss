@@ -1,12 +1,23 @@
-/* going with a triad color scheme */
-@value primary-base: #f3ced6;
-@value primary-light: #FBEFF1;
-@value primary-dark: #bfa3a9;
-@value secondary-base: #f2efb6;
-@value secondary-light: #F9F7DC;
-@value tertiary-base: #859da6;
-@value fourth-base: #a67c85;
-@value fifth-base: #b6e2f2;
-@value neutral: #736265;
-@value highlight: #f4869e;
-@value background: #733f4a;
+//Upward Color Theme:
+$primary-base: #f3ced6;
+$primary-light: #fbeff1;
+$primary-dark: #bfa3a9;
+$secondary-base: #f2efb6;
+$secondary-light: #f9f7dc;
+$tertiary-base: #859da6;
+$fourth-base: #a67c85;
+$fifth-base: #b6e2f2;
+$neutral: #736265;
+$highlight: #f4869e;
+$background: #733f4a;
+
+//Overrides:
+$body-color: #111;
+
+$theme-colors: (
+   secondary:#fbeff1,
+);
+@import "~bootstrap/scss/bootstrap";
+
+// Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap";
