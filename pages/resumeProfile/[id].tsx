@@ -2,7 +2,6 @@ import { useRouter } from 'next/dist/client/router';
 import { route } from 'next/dist/next-server/server/router'
 import React, { useEffect, useState } from 'react'
 
-
 // needs to be replaced with real api call for data for final
 enum Role {
     USER = 'User',
@@ -24,9 +23,7 @@ interface iUser {
     role: Role,
     tasks: string[],
     profile: Profile
-
 }
-
 
 // fake user data
 const users: iUser[] = [
@@ -56,12 +53,7 @@ const users: iUser[] = [
             calendlyLink: "davidlink"
         }
     }
-
 ];
-
-
-
-
 
 export default function ResumeProfile() {
     const router = useRouter();
@@ -73,18 +65,14 @@ export default function ResumeProfile() {
         if (findCurrentUser.length > 0) {
             setUser(findCurrentUser[0])
         }
-
     }, [id, setUser])
 
     const { firstName, lastName, email, createdAt, updatedAt, role, tasks, profile } = currentUser || {};
-
-
 
     return (
         <div style={{ marginTop: '200px' }} className="container">
             <div style={{ display: "flex", alignItems: "baseline" }}>
                 <h4>{firstName} {lastName}</h4>
-
             </div>
             <div>
                 <ul style={{ listStyleType: 'none' }}>
@@ -94,20 +82,15 @@ export default function ResumeProfile() {
                     <li>
                         <p>Calendly Link: <span>{profile && profile.calendlyLink}</span></p>
                     </li>
-
                     <li>
                         <p>role <span>{role}</span></p>
                     </li>
-
                 </ul>
                 <ul>
                     <h4>Tasks</h4>
                     {tasks && tasks.map((task, index) => {
                         return (
-
-
                             <li key={index}>{task}</li>
-
                         )
                     })}
                 </ul>
