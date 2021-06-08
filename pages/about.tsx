@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-
-import SpotlightCard from '../src/components/SpotlightCard/SpotlightCard'
+import SpotlightCard from '../components/SpotlightCard'
 
 function About() {
   return (
@@ -9,34 +8,23 @@ function About() {
       <Head>
         <title>Upward</title>
         <meta name="description" content="Advancing women in tech" />
-        <link rel="icon" href="/upward-logo.png"/>
+        <link rel="icon" href="/upward-logo.svg" />
       </Head>
-      <div className="container text-center">
-        <div>
-            <img
-            src="/upward-logo.png"
-            alt="Upward"
-            className="icon-small"></img>
-        </div>
-        <h1>About Us</h1>
-
+      <div className="container page-margin-top">
+        <h1 className="text-center">Our Mission </h1>
         <div>
           <p>
-            This diversity project started to help give engineers{' '}
-            <b>hands-on experience</b> with new and popular technologies used at
-            startups, such as <b>React</b> and <b>Node.js</b>. Our goal is to
-            create a web application to help <b>advance women in tech</b>{' '}
-            through study groups and <b>mentorship</b>. Our web application is
-            an <b>open source project</b> that women engineers work on to build
-            features on a live application that both <b>builds their skills</b>,
-            and <b>benefits the community</b> as a whole.
+            Upward is a platform providing free mentorship for women engineers looking for a new role to level up their careers in diverse and inclusive companies.
+            By signing up, you will get paired up with engineering leaders, access interview preparation materials and connect with awesome hiring managers.
           </p>
           <p>
-            Get involved by signing up for the waitlist to join one of our study
-            groups, or by signing up to get mentorship and career development
-            support as you find your next role with Upward.
+             This platform is an open source project built by women engineers seeking to gain experience in new technologies 
+             such as React and Node.js.        
           </p>
         </div>
+        <hr className="dotted"/>
+        <h1 className="text-center"> Leadership team </h1>
+        <br/>
         <div className="container">
           <div className="row">
             <SpotlightCard
@@ -44,19 +32,55 @@ function About() {
               image="/marianebekker.jpeg"
               role="Founder &amp; CEO"
               linkedin="https://www.linkedin.com/in/marianebekker/"
-              bio="Mariane is a software engineer leader with over a decade of experience mentoring software engineers. She started her career as a software engineer after graduating from McGill University in Canada and then moved to San Francisco.  Her passion and super power is mentoring other women in tech to close the gender gap."></SpotlightCard>
-            <SpotlightCard
-              name="Alice Davis"
-              role="Lead Software Engineer"
-              image="/alicedavis.jpg"
-              linkedin="https://www.linkedin.com/in/diffalot/"
-              bio="Alice aims to contribute to secured and anonymized, in-browser communications and data sharing platforms built on open web standards to amplify voices of marginalized communities. She prioritizes mentoring members of marginalized groups as they pursue commerce as web developers and entrepreneurs. She really likes making websites, native applications, and embedded devices that make people's lives easier and safer."></SpotlightCard>
+              bio="Mariane is a software engineer leader with over a decade of experience building and managing diverse engineering team. She founded Upward to help bridge the gender gap in tech by providing free mentorship tools for women engineers."></SpotlightCard>
             <SpotlightCard
               name="Louise Lehman"
               role="Lead Software Engineer"
               image="/louiselehman.jpeg"
               linkedin="https://www.linkedin.com/in/louiselehman/"
-              bio="Louise is a Full Stack Software Engineer in the health and wellness industry. She loves having the opportunity to work and interact with people across differing disciplines, including product, architecture, UX, copy, research, and AI/ML. She aspires to be a humble teacher, a trustworthy and helpful collaborator, a good listener, an analytical thinker, a good friend, and to be graceful amidst chaos."></SpotlightCard>
+              bio="Louise is a Full Stack Software Engineer working in the health industry who aspires to be a humble teacher, a trustworthy and helpful collaborator, a good listener, an analytical thinker, a good friend, and to be graceful amidst chaos."></SpotlightCard>
+              <SpotlightCard
+              name="Ainne Oum"
+              role="Lead Front End Engineer"
+              image="/ainneoum.png"
+              linkedin="https://www.linkedin.com/in/ainneoum/"
+              bio="Ainne is a Frontend Engineer with expertize in React and responsive design. She is passionate about mentoring other women and is currently managing and leading the Women Who Code SF chapter."></SpotlightCard>
+          </div>
+          <hr className="dotted"/> 
+          <h1 className="text-center"> Contributors </h1>
+          <br/>
+          <div className="container">
+            <div className="row">
+              <SpotlightCard
+                name="Alice Davis"
+                image="/alicedavis.jpeg"  
+                role="Full Stack Engineer"
+                linkedin="https://www.linkedin.com/in/diffalot/"></SpotlightCard>
+              <SpotlightCard
+                name="Bailey Ritchie"
+                image="/baileyritchie.jpeg"              
+                role="Full Stack Engineer"
+
+                linkedin="https://www.linkedin.com/in/bailey-ritchie-568569142/"></SpotlightCard>
+              <SpotlightCard
+                name="Eula Bengo"
+                role="Full Stack Engineer"                
+                image="/eulabengco.jpeg"              
+                linkedin="https://www.linkedin.com/in/eulabengco/"></SpotlightCard>
+            </div>
+          </div>
+          <hr className="dotted"/> 
+          <br/>
+          <h1 className="text-center"> Mentors </h1>
+          <br/>
+          <div className="container">
+            <div className="row">
+              <SpotlightCard
+                name="Alex Robson"
+                image="/alexrobson.jpeg"  
+                role="Engineering Leader"                
+                linkedin="https://www.linkedin.com/in/alexsrobson/"></SpotlightCard>
+            </div>
           </div>
         </div>
       </div>
