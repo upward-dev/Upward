@@ -24,7 +24,7 @@ function RegisterForm() {
     const userPassword = useField('userPassword', form);
     
     return(
-        <form  onSubmit={handleSubmit} className="border rounded p-3">
+        <form  onSubmit={handleSubmit}>
             <h1 className="text-center fs-3">Let's create your Upward account.</h1>
             <div className="my-3">
                 <input {...firstName.input} placeholder="First Name" className="form-control" required/>
