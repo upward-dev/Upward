@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm, useField } from 'react-final-form-hooks';
+import { useForm } from 'react-hook-form';
 
 function RegisterForm() {
     
@@ -13,45 +13,45 @@ function RegisterForm() {
         return {};
     };
 
-    const {form, handleSubmit, values, pristine, submitting} = useForm({
-        onSubmit,
-        validate
+    const {handleSubmit, register} = useForm({
+        // onSubmit,
+        // validate
     });
 
-    const firstName = useField('firstName', form);
-    const lastName = useField('lastName', form);
-    const userEmail = useField('userEmail', form);
-    const userPassword = useField('userPassword', form);
+    const firstName = register('firstName');
+    const lastName = register('lastName');
+    const userEmail = register('userEmail');
+    const userPassword = register('userPassword');
     
     return(
-        <form  onSubmit={handleSubmit}>
+        <form >
             <h1 className="text-center fs-3">Let's create your Upward account.</h1>
             <div className="my-3">
-                <input {...firstName.input} placeholder="First Name" className="form-control" required/>
+              {/*  <input {...firstName.input} placeholder="First Name" className="form-control" required/>
                 {firstName.meta.touched && firstName.meta.error && (
                 <span>{firstName.meta.error}</span>
-                )}
+                )}*/}
             </div>
             <div className="mb-3">
-                <input {...lastName.input} placeholder="Last Name" className="form-control" required/>
-                {lastName.meta.touched && lastName.meta.error && (
-                <span>{lastName.meta.error}</span>
-                )}
+                <input {...lastName} placeholder="Last Name" className="form-control" required/>
+               {/*  {lastName.meta.touched && lastName.meta.error && (
+                 {<span>{lastName.meta.error}</span>}
+                )}*/}
             </div>
             <div className="mb-3">
-                <input {...userEmail.input} placeholder="Email Address" className="form-control" required/>
-                {userEmail.meta.touched && userEmail.meta.error && (
-                <span>{userEmail.meta.error}</span>
-                )}
+                <input {...userEmail} placeholder="Email Address" className="form-control" required/>
+                 {/*{userEmail.meta.touched && userEmail.meta.error && (
+                 {<span>{userEmail.meta.error}</span>}
+                )}*/}
             </div>
             <div className="mb-3">
-                <input {...userPassword.input} placeholder="Password" className="form-control" required/>
-                {userPassword.meta.touched && userPassword.meta.error && (
-                <span>{userPassword.meta.error}</span>
-                )}
+                <input {...userPassword} placeholder="Password" className="form-control" required/>
+               {/*  {userPassword.meta.touched && userPassword.meta.error && (
+                <   span>{userPassword.meta.error}</span>
+                )}*/}
             </div>
             <div className="d-grid gap-2 col-6 mx-auto">
-                <button type="submit" disabled={pristine || submitting} className="btn btn-primary">Register</button>
+                <button type="submit" className="btn btn-primary">Register</button>
             </div>
         </form>
     );

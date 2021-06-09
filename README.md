@@ -5,6 +5,20 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with
 
 ## Contributing
 
+### Technologies we use
+
+* Next.js
+* Typescript
+* [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) for css styles - do not write your own custom CSS unless it's absoultely needed. Take a look at bootstrap and the styles they provide.
+* [Sass](https://sass-lang.com/)
+* [React hook form](https://react-hook-form.com/)
+* [Prisma] (https://www.prisma.io/nextjs#nextjs-tabs) - ORM to connect to the database
+* [Postgres](https://www.postgresql.org/) - Database language
+* Heroku to host our codebase
+* Docker
+
+If you want to use another type of package, please check with us on our slack channel
+
 ### First, install the project dependencies with `npm`
 
 Install the dependencies for the project with `npm` which is a shortcut for
@@ -46,6 +60,8 @@ endpoint can be edited in `pages/api/hello.js`.
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are
 treated as [API routes](https://nextjs.org/docs/api-routes/introduction)
 instead of React pages.
+
+
 
 ### Preparing for a Pull Request
 

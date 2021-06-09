@@ -1,5 +1,6 @@
 import React from 'react';
-import {useField,useForm} from 'react-final-form-hooks';
+import { useForm } from 'react-hook-form';
+
 import './ProjectResume.module.scss';
 
 //import prisma from '../../lib/prisma'
@@ -39,57 +40,57 @@ export const ProjectResume = ({userId}:ProjectProps) => {
   const validate = (values:object) => {
     return {};
   }
-  const {form, handleSubmit,values,pristine,submitting} = useForm({
-    onSubmit,
-    validate
+  const {register, handleSubmit } = useForm({
+    // onSubmit, 
+    // validate
   });
-  const projectTitle = useField('projectTitle',form);
-  const projectDescription = useField('projectDescription',form);
-  const projectUrl = useField('projectUrl',form);
-  const projectStart = useField('projectStart', form);
-  const projectEnd = useField('projectEnd',form);
+  const projectTitle = register('projectTitle');
+  const projectDescription = register('projectDescription');
+  const projectUrl = register('projectUrl');
+  const projectStart = register('projectStart');
+  const projectEnd = register('projectEnd');
   return (
   <div>
     <h1 >Add Your Projects {userId}</h1>
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form>
       <div>
         <label>Project Title</label>
-        <input {...projectTitle.input} placeholder="Project Title" type="text"/> {
-          projectTitle.meta.touched && projectTitle.meta.error && (
-            <span>{projectTitle.meta.error}</span>
-          )
+        <input {...projectTitle} placeholder="Project Title" type="text"/> {
+          // projectTitle.meta.touched && projectTitle.meta.error && (
+            // <span>{projectTitle.meta.error}</span>
+          // )
         }
       </div>
       <div>
         <label>Project Description</label>
-        <input {...projectDescription.input} placeholder="Project Description" type="text"/> {
-          projectDescription.meta.touched && projectDescription.meta.error && (
-            <span>{projectDescription.meta.error}</span>
-          )
+        <input {...projectDescription} placeholder="Project Description" type="text"/> {
+          // projectDescription.meta.touched && projectDescription.meta.error && (
+            // <span>{projectDescription.meta.error}</span>
+          // )
         }
       </div>
       <div>
         <label>Project Url</label>
-        <input {...projectUrl.input} placeholder="Project URL" type="text"/> {
-          projectUrl.meta.touched && projectUrl.meta.error && (
-            <span>{projectUrl.meta.error}</span>
-          )
+        <input {...projectUrl} placeholder="Project URL" type="text"/> {
+          // projectUrl.meta.touched && projectUrl.meta.error && (
+            // <span>{projectUrl.meta.error}</span>
+          // )
         }
       </div>
       <div>
         <label>Project Start Date</label>
-        <input {...projectStart.input} placeholder="Project Start Date" type="date"/> {
-          projectStart.meta.touched && projectStart.meta.error && (
-            <span>{projectStart.meta.error}</span>
-          )
+        <input {...projectStart} placeholder="Project Start Date" type="date"/> {
+          // projectStart.meta.touched && projectStart.meta.error && (
+            // <span>{projectStart.meta.error}</span>
+          // )
         }
       </div>
       <div>
         <label>Project End Date</label>
-        <input {...projectEnd.input} placeholder="Project End Date" type="date"/> {
-          projectEnd.meta.touched && projectEnd.meta.error && (
-            <span>{projectEnd.meta.error}</span>
-          )
+        <input {...projectEnd} placeholder="Project End Date" type="date"/> {
+          // projectEnd.meta.touched && projectEnd.meta.error && (
+            // <span>{projectEnd.meta.error}</span>
+          // )
         }
       </div>
         <button type="submit">Submit</button>

@@ -1,7 +1,8 @@
 import React from 'react';
-import { useForm, useField } from 'react-final-form-hooks';
+import { useForm } from 'react-hook-form';
 
 function LoginForm() {
+
 
     const onSubmit = async (e: object) => {
         // e.preventDefault();
@@ -13,32 +14,32 @@ function LoginForm() {
         return {};
     };
 
-    const {form, handleSubmit, values, pristine, submitting} = useForm({
-        onSubmit,
-        validate
+    const {register, handleSubmit} = useForm({
+        // onSubmit,
+        // validate
     });
 
-    const userEmail = useField('userEmail', form);
-    const userPassword = useField('userPassword', form);
+    const userEmail = register('userEmail');
+    const userPassword = register('userPassword');
     
     return(
-        <form  onSubmit={handleSubmit} className="border rounded p-3">
+        <form  className="border rounded p-3">
             <h1 className="text-center fs-3">Welcome Back!</h1>
             <h2 className="text-center fs-5 mb-4">Login to your Upward account.</h2>
             <div className="mb-3">
-                <input {...userEmail.input} placeholder="Email Address" className="form-control" required/>
-                {userEmail.meta.touched && userEmail.meta.error && (
+                <input {...userEmail} placeholder="Email Address" className="form-control" required/>
+             {/*   {userEmail.meta.touched && userEmail.meta.error && (
                 <span>{userEmail.meta.error}</span>
-                )}
+                )}*/}
             </div>
             <div className="mb-3">
-                <input {...userPassword.input} placeholder="Password" className="form-control" required/>
+             {/*   <input {...userPassword} placeholder="Password" className="form-control" required/>
                 {userPassword.meta.touched && userPassword.meta.error && (
                 <span>{userPassword.meta.error}</span>
-                )}
+                )}*/}
             </div>
             <div className="d-grid gap-2 col-6 mx-auto">
-                <button type="submit" disabled={pristine || submitting} className="btn btn-primary">Submit</button>
+                <button type="submit"className="btn btn-primary">Submit</button>
             </div>
             <div className="text-center my-2">
                 New to Upward? <a href="/register">Register now</a>
