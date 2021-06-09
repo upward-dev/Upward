@@ -5,7 +5,6 @@ import prisma from '../lib/prisma'
 
 export default function Home() {
   return (
-
     <div className="page-margin-top">
       <div className="container">
         <div className="row">
