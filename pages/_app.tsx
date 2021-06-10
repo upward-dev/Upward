@@ -3,9 +3,11 @@ import '../styles/globals.scss'
 import Layout from '../components/Layout'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
+import { UserContextProvider } from '../src/util/Magic/userContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
+    <UserContextProvider>
     <Layout>
       <Head>
         <title>Upward</title>
@@ -26,6 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Component {...pageProps} />
     </Layout>
+    </UserContextProvider>
   )
 }
 
