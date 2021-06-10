@@ -21,15 +21,15 @@ const Nav = () => {
         <div className="primary" id="navbarColor01">
           <ul className="nav ms-auto">
             <li className="nav-item">
-              <a style={{ color: 'black' }} className="nav-link" href="/about">
+              <a  className="nav-link text-dark" href="/about">
                 About
               </a>
             </li>
-            <li style={{ backgroundColor: '#f3ced6', borderRadius: 5 }}>
+            <li className="rounded btn-secondary" >
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdC-AbV2SNhMS99yhY6r4Gu34UC9DhVWIM7utII6irV1pyaSw/viewform"
-                className="btn btn- active"
-                style={{ color: 'black' }}>
+                className="btn btn- active text-dark "
+                >
                 <i className="glyphicon-floppy-disk" aria-hidden="true"></i>
                 Join the waitlist
               </a>

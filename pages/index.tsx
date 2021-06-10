@@ -19,7 +19,7 @@ export default function Home() {
             </div>
 
             <div className="col-lg">
-              <h1 className="title" style={{ marginTop: 40 }}>
+              <h1 className="title mt-5" >
                 Find an awesome role
               </h1>
               <p>
