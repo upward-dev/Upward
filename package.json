@@ -10,8 +10,7 @@
     "format": "prettier --write .",
     "ci-at-home": "run-s lint build",
     "types:strict": "npx tsc --strict",
-    "watch:types:strict": "npm types:strict --watch",
-    "postinstall": "npm install"
+    "watch:types:strict": "npm types:strict --watch"
 
   },
   "dependencies": {
