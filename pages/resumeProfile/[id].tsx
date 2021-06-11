@@ -12,20 +12,17 @@ export default function ResumeProfile() {
             {user?.loading ?  (
                 <p>Loading..</p>
             ): (
-                user && (
-                    <>
-                        <ul className="list-group">
-                            <li className="list-group-item">
-                                <p>Email <span>{user.email}</span></p>
-                            </li>
-                            <li className="list-group-item">
-                            <p>Email <span>{user.issuer}</span></p>
-                            </li>                
-                        </ul>
-                    </>
+                user && (      
+                <ul className="list-group">
+                    <li className="list-group-item">
+                        <p>Email <span>{user.email}</span></p>
+                    </li>
+                    <li className="list-group-item">
+                    <p>Email <span>{user.issuer}</span></p>
+                    </li>                
+                </ul>   
                 )
-            )}
-             
+            )}  
         </div>
     )
 }
