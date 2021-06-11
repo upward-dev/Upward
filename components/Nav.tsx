@@ -20,7 +20,13 @@ const Nav = () => {
         {/* <div className="collapse navbar-collapse" id="navbarColor01"> */}
         <div className="primary" id="navbarColor01">
           <ul className="nav ms-auto">
+ 
             <li className="nav-item">
+              <a style={{ color: 'black' }} className="nav-link" href="/events">
+                Events
+              </a>
+            </li>
+           <li className="nav-item">
               <a style={{ color: 'black' }} className="nav-link" href="/about">
                 About
               </a>
