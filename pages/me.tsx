@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 //redirect route for LinkedIn Authentication
 const Me = () => {
-  const router = useRouter(); 
+  //const router = useRouter(); 
   //   if (router.query.code) {  
   //     LINKEDIN_OAUTH(router.query.code)
   //     router.push('/me')
