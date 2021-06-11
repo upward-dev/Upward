@@ -9,7 +9,6 @@ import Router from 'next/router';
 
 function Login() {
     const {user,setUser}  = useContext(UserContext);
-
     useEffect(() => {
         user?.isuser && Router.push('/profile');
     },[user])
@@ -32,8 +31,8 @@ function Login() {
           });
           if (res.status === 200) {
             // Set the UserContext to the now logged in user
-              let userMetadata = await magic.user.getMetadata();
-              let userId = userMetadata.issuer.split(":")[2];
+              let userMetadata = magic && await magic.user.getMetadata();
+              let userId =  userMetadata.issuer.split(":")[2];
               await setUser(userMetadata);
               Router.push(`/resumeProfile/${userId}`);
               return userMetadata;
