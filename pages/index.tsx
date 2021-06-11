@@ -11,29 +11,28 @@ export default function Home() {
           <div className="col-sm">
             <img src="/girl.png" width="100%" alt="upward-logo"></img>
           </div>
-
-
-          <div className="col-lg">
-            <h1 className="title" style={{ marginTop: 40 }}>
-              Find an awesome role
-            </h1>
-            <p>
-              Our mission is to advance women in tech through mentorship during the job search process.
-            </p>
-            <p>
-              Join the waitlist to receive career coaching from engineering leaders, prepare for technical interviews and connect with hiring managers at fast growing, inclusive and diverse startups.
-            </p>
-            <div>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdC-AbV2SNhMS99yhY6r4Gu34UC9DhVWIM7utII6irV1pyaSw/viewform"
-                target="_blank">
-                <button
-  
-                  type="button"
-                  className="btn btn-secondary">
-                  Join the waitlist
-                </button>
-              </a>
+            <div className="col-lg">
+              <h1 className="title mt-5" >
+                Find an awesome role
+              </h1>
+              <p>
+                Our mission is to advance women in tech through mentorship during the job search process.
+              </p>
+              <p>
+                Join the waitlist to receive career coaching from engineering leaders, prepare for technical interviews and connect with hiring managers at fast growing, inclusive and diverse startups.
+              </p>
+              <div>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdC-AbV2SNhMS99yhY6r4Gu34UC9DhVWIM7utII6irV1pyaSw/viewform"
+                  target="_blank">
+                  <button
+    
+                    type="button"
+                    className="btn btn-secondary">
+                    Join the waitlist
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
