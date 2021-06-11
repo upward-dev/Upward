@@ -1,6 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import { route } from 'next/dist/next-server/server/router'
 import React, { useEffect, useState } from 'react'
+
 // needs to be replaced with real api call for data for final
 enum Role {
     USER = 'User',
@@ -21,8 +22,9 @@ interface iUser {
     role: Role,
     tasks: string[],
     profile: Profile
-
 }
+
+
 // fake user data
 const users: iUser[] = [
     {
@@ -52,6 +54,7 @@ const users: iUser[] = [
         }
     }
 ];
+
 export default function ResumeProfile() {
     const router = useRouter();
     const [currentUser, setUser] = useState<iUser | null>(null);

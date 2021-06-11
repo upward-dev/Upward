@@ -30,19 +30,19 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ github.workspace }}/node_modules
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
 
       - name: Cache `./next/cache`
         uses: actions/cache@v2
         with:
           path: ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**//package-lock.json') }}
 
-      - name: Yarn Install
-        run: yarn install
+      - name: npm Install
+        run: npm install
 
       - name: Lint with Prettier
-        run: yarn run lint
+        run: npm run lint
 
         ########################################################################
         # Optional Typescript Strict Type Checking
@@ -70,7 +70,7 @@ jobs:
         #
         #    - name: Check Typescript
         #      if: ${{ startsWith('ts-', $HEAD_BRANCH) || contains('typescript', $HEAD_BRANCH) }}
-        #      run: yarn run types:strict
+        #      run: npm run types:strict
         #      env:
         #        HEAD_BRANCH: ${{ steps.extract_branch.outputs.branch }}
         #
@@ -80,7 +80,7 @@ jobs:
 
       - name: Strict Typescript Check
         if: ${{ startsWith('ts-', steps.extract_branch.outputs.branch) || contains('typescript', steps.extract_branch.outputs.branch) }}
-        run: yarn run types:strict
+        run: npm run types:strict
 
         # * https://docs.github.com/en/actions/reference/events-that-trigger-workflows
         # * https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions
@@ -89,4 +89,4 @@ jobs:
         ########################################################################
 
       - name: Build with NextJS
-        run: yarn run build
+        run: npm run build
