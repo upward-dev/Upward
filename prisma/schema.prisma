@@ -11,6 +11,7 @@ model User {
   id                    Int      @id @default(autoincrement())
   firstName             String?
   lastName              String?
+  email                 String   @unique
   createdAt             DateTime @default(now())  @map("created_at")
   updatedAt             DateTime @updatedAt       @map("updated_at")
   authenticationMethod  AuthenticationMethod      @default(SELF)
@@ -26,9 +27,10 @@ model Profile {
   userId            Int
   roleType          RoleType[]
   yearsOfExperience Int
-  frontEndLanguages FrontEndLanguage[]
-  backEndLanguages  BackendLanguage[]
-  databases         Database[]
+  frontEndTechnologies FrontendTechnology[]
+  backEndTechnologies  BackendTechnology[]
+  databases         StorageTechnology[]
+  operations        OperationsTechnology[]
   locationsWanted   LocationWanted[]
   minimumSalary     Int
   maximumSalary     Int
@@ -84,21 +86,27 @@ model RoleType {
   profile Profile[]         @relation(references: [id])
 }
 
-model FrontEndLanguage  {
+model FrontendTechnology  {
   id          Int               @id @default(autoincrement())
-  language    FrontendLanguages  
+  technology  FrontendTechnologies  
   profile     Profile[]         @relation(references: [id])
 }
 
-model BackendLanguage  {
+model BackendTechnology  {
   id          Int                @id @default(autoincrement())
-  language    BackendLanguages  
+  technology  BackendTechnologies  
   profile     Profile[]          @relation(references: [id])
 }
 
-model Database {
+model OperationsTechnology {
   id          Int                 @id @default(autoincrement())
-  language    DatabaseLanguages  
+  technology  OperationsTechnologies  
+  profile     Profile[]           @relation(references: [id])
+}
+
+model StorageTechnology {
+  id          Int                 @id @default(autoincrement())
+  technology  StorageTechnologies  
   profile     Profile[]           @relation(references: [id])
 }
 
@@ -140,36 +148,57 @@ enum Locations {
   PHILADELPHIA
 }
 
-enum BackendLanguages {
+enum BackendTechnologies {
+  CSHARP
+  DJANGO
+  DOTNET
+  ELIXIR
+  JAVA
+  KAFKA
   NODE
   NEST
-  PHP
-  RUBY
-  RAILS
-  PYTHON
-  DJANGO
-  CSHARP
-  DOTNET
-  KUBERNETES
-  DOCKER
-  AWS
-}
-
-enum DatabaseLanguages {
-  SQL
-  NOSQL
-  MANGODB
-  POSTGRES
-  ORACLE
-}
-
-enum FrontendLanguages {
-  REACT
-  JAVASCRIPT
-  VUE
-  ANGULAR
   NEXT
+  PHP
+  PYTHON
+  RABBITMQ
+  RAILS
+  RUBY
+}
+
+enum OperationsTechnologies {
+  ANSIBLE
+  AWS
+  AZURE
+  DIGITALOCEAN
+  DOCKER
+  GCS
+  KUBERNETES  
+  TERRAFORM
+}
+
+enum StorageTechnologies {
+  CASSANDRA
+  COUCHDB
+  DYNAMODB
+  MEMCACHED
+  MONGODB
+  MSSQL
+  MYSQL
+  NOSQL
+  ORACLE
+  POSTGRES
+  REDIS  
+}
+
+enum FrontendTechnologies {
+  ANGULAR
   EMBER
+  FLOW
+  JAVASCRIPT
+  NEXT
+  REACT
+  TYPESCRIPT  
+  VUE  
 }
 
 enum RoleDescription {
