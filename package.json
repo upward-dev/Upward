@@ -10,7 +10,9 @@
     "format": "prettier --write .",
     "ci-at-home": "run-s lint build",
     "types:strict": "npx tsc --strict",
-    "watch:types:strict": "npm types:strict --watch"
+    "watch:types:strict": "npm types:strict --watch",
+    "postinstall": "npm install"
+
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
