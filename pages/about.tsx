@@ -33,6 +33,7 @@ function About() {
               role="Founder &amp; CEO"
               linkedin="https://www.linkedin.com/in/marianebekker/"
               bio="Mariane is a software engineer leader with over a decade of experience building and managing diverse engineering team. She founded Upward to help bridge the gender gap in tech by providing free mentorship tools for women engineers."></SpotlightCard>
+              
             <SpotlightCard
               name="Louise Lehman"
               role="Lead Software Engineer"
@@ -45,6 +46,14 @@ function About() {
               image="/ainneoum.png"
               linkedin="https://www.linkedin.com/in/ainneoum/"
               bio="Ainne is a Frontend Engineer with expertize in React and responsive design. She is passionate about mentoring other women and is currently managing and leading the Women Who Code SF chapter."></SpotlightCard>
+              <SpotlightCard
+               name='Rachael Concessio'
+               image="/rachaelconcessio.jpg"
+               role="Frontend Engineer"
+               linkedin="https://www.linkedin.com/in/rachael-concessio-1272441a7/"
+               bio="Rachael is a Frontend Engineer with experience in React and creating well-designed websites. She is passionate about using her skills to create an impact and loves to network and collaborate with other developers."
+
+              ></SpotlightCard>
           </div>
           <hr className="dotted"/> 
           <h1 className="text-center"> Contributors </h1>

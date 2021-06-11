@@ -7,6 +7,8 @@ export default function ResumeProfile() {
     const router = useRouter();
     const {user} = useContext(UserContext);
     const { id } = router.query;
+
+    // once connected to db, retrieve user data from db based on magic links id of currently logged in user. 
     return (
         <div className="container page-margin-top">
             {user?.loading ?  (
