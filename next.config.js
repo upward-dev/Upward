@@ -11,9 +11,3 @@
       LINKEDIN_CLIENT_SECRET: process.env.LINKEDIN_CLIENT_SECRET,
     }
   };
-
- module.exports = {
-  future: {
-    webpack5: true,
-  },
-}
