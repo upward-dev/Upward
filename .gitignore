@@ -19,6 +19,7 @@
 .DS_Store
 *.pem
 .buildinfo.json
+source.tar.gz
 
 # debug
 npm-debug.log*
