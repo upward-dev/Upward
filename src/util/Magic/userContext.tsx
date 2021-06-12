@@ -22,5 +22,3 @@ export const UserContextProvider: React.FC = (props) => {
         </UserContext.Provider>
     )
 }
-
-
