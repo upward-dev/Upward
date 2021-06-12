@@ -1,8 +1,4 @@
-
-
 const Nav = () => {
- 
-  
   return (
     <nav className="navbar navbar-expand-sm fixed-top navbar-light bg-light">
       <div className="container-fluid">
@@ -39,12 +35,9 @@ const Nav = () => {
               </a>
             </li>
           </ul>
-        
         </div>
-        
       </div>
     </nav>
   )
 }
-
 export default Nav
