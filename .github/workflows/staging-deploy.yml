@@ -10,6 +10,9 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
       -
+        name: Docker Auth
+        run: docker login -p ${{ secrets.HEROKU_API_KEY }} -u ${{ secrets.HEROKU_EMAIL }} registry.heroku.com
+      -
         name: Build and Deploy
         env: 
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
