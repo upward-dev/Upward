@@ -16,6 +16,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           heroku_app_name: "upward-staging"
-          justlogin: true
-      - run: echo ${{secrets.HEROKU_EMAIL}}
-      - run: heroku auth:whoami
+          usedocker: true
