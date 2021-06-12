@@ -4,7 +4,7 @@ on:
     branches: ['staging', 'dockerize']
 jobs:
   build:
-    environment: staging_environment
+    environment: staging-build
     runs-on: ubuntu-latest
     steps:
       - 
