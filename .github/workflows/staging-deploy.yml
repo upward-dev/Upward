@@ -18,3 +18,4 @@ jobs:
           heroku_email: ${{secrets.HEROKU_USER}}
           heroku_app_name: "upward-staging"
           justlogin: true
+      - run: heroku auth:whoami
