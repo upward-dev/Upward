@@ -4,7 +4,6 @@ on:
     branches: ['staging', 'dockerize']
 jobs:
   build:
-    environment: staging-build
     runs-on: ubuntu-latest
     steps:
       - 
@@ -15,8 +14,8 @@ jobs:
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_email: ${{secrets.HEROKU_USER}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
           heroku_app_name: "upward-staging"
           justlogin: true
-      - run: echo ${{secrets.HEROKU_USER}}
+      - run: echo ${{secrets.HEROKU_EMAIL}}
       - run: heroku auth:whoami
