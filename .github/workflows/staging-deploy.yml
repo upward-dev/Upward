@@ -1,0 +1,20 @@
+name: Staging Deploy
+on: 
+  push:
+    branches: ['staging', 'dockerize']
+jobs:
+  build:
+    environment: staging_environment
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Build and Deploy
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_email: ${{secrets.HEROKU_USER}}
+          heroku_app_name: "upward-staging"
+          usedocker: true
