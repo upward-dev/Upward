@@ -18,4 +18,5 @@ jobs:
           heroku_email: ${{secrets.HEROKU_USER}}
           heroku_app_name: "upward-staging"
           justlogin: true
+      - run: echo ${{secrets.HEROKU_USER}}
       - run: heroku auth:whoami
