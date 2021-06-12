@@ -5,8 +5,6 @@ import { magic } from "../src/util/Magic/magic.config";
 import {UserContext} from "../src/util/Magic/userContext";
 import Router from 'next/router';
 
-
-
 function Login() {
     const {user,setUser}  = useContext(UserContext);
     useEffect(() => {
