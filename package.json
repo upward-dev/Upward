@@ -22,6 +22,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@popperjs/core": "^2.9.2",
     "@prisma/client": "^2.24.0",
+    "@viperidae/shipwright": "^1.7.3",
     "bootstrap": "^5.0.0-beta3",
     "dotenv": "^10.0.0",
     "jquery": "^3.6.0",
@@ -42,7 +43,7 @@
     "prettier": "^2.2.1",
     "prettier-config-standard": "^4.0.0",
     "prisma": "^2.24.0",
-    "typescript": "^4.2.4",
-    "react-hook-form": "^7.8.2"
+    "react-hook-form": "^7.8.2",
+    "typescript": "^4.2.4"
   }
 }
