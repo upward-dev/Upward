@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 
 function LoginForm({submitForm}) {
 
-
     const onSubmit = async (e: object) => {
         // e.preventDefault();
         // await primsa db response

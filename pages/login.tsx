@@ -4,44 +4,32 @@ import {Magic} from "magic-sdk";
 import { magic } from "../src/util/Magic/magic.config";
 import {UserContext} from "../src/util/Magic/userContext";
 import Router from 'next/router';
-
-
+import { LoginMagicSuccess, LoginMagicUser } from '../src/util/Magic/magicFunctions';
 
 function Login() {
-    const {user,setUser}  = useContext(UserContext);
-    useEffect(() => {
-        user?.isuser && Router.push('/profile');
-    },[user])
-    
+    const userContext = useContext(UserContext);
+    if(!userContext) { return null;}
+    const {user,setUser} = userContext;
+
+ 
     async function handleLoginWithEmail(data: { userEmail: string; }):Promise<void> {
         const {userEmail} = data;
         try {
           // Trigger Magic link to be sent to user
-            let didToken = await magic.auth.loginWithMagicLink({
-              email:userEmail,
-              redirectURI: new URL('/callback', window.location.origin).href, // optional redirect back to your app after magic link is clicked
-            });
-            // Validate didToken with server
-            const res = await fetch('/api/login', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + didToken,
-              },
-          });
-          if (res.status === 200) {
-            // Set the UserContext to the now logged in user
-              let userMetadata = magic && await magic.user.getMetadata();
-              let userId =  userMetadata.issuer.split(":")[2];
-              await setUser(userMetadata);
-              Router.push(`/resumeProfile/${userId}`);
-              return userMetadata;
-          }
+          let response = await LoginMagicUser(userEmail);
+           LoginMagicSuccess(response,setUser,Router);
+
+    
         } catch (error) {
           return error;
         }
         return;
       }
+
+      async function createUser() {
+        let newUser = await fetch('/api/user')
+      }
+
     return (
         <main className="container">
             <section className="d-flex flex-column min-vh-100 justify-content-center align-items-center">
