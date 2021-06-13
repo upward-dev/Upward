@@ -4,16 +4,12 @@ import {Magic} from "magic-sdk";
 import { magic } from "../src/util/Magic/magic.config";
 import {UserContext} from "../src/util/Magic/userContext";
 import Router from 'next/router';
-<<<<<<< HEAD
 import { LoginMagicSuccess, LoginMagicUser } from '../src/util/Magic/magicFunctions';
-=======
->>>>>>> 319d6b7f917328dc17e65c7080206ad216aa1b43
 
 function Login() {
     const userContext = useContext(UserContext);
     if(!userContext) { return null;}
     const {user,setUser} = userContext;
-
  
     async function handleLoginWithEmail(data: { userEmail: string; }):Promise<void> {
         const {userEmail} = data;
@@ -22,7 +18,6 @@ function Login() {
           let response = await LoginMagicUser(userEmail);
            LoginMagicSuccess(response,setUser,Router);
 
-    
         } catch (error) {
           return error;
         }
@@ -43,4 +38,3 @@ function Login() {
 }
 
 export default Login;
-
