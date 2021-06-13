@@ -1,8 +1,4 @@
-
-
 const Nav = () => {
- 
-  
   return (
     <nav className="navbar navbar-expand-sm fixed-top navbar-light bg-light">
       <div className="container-fluid">
@@ -24,8 +20,14 @@ const Nav = () => {
         {/* <div className="collapse navbar-collapse" id="navbarColor01"> */}
         <div className="primary" id="navbarColor01">
           <ul className="nav ms-auto">
+ 
             <li className="nav-item">
-              <a  className="nav-link text-dark" href="/about">
+              <a className="nav-link text-dark"  href="/events">
+                Events
+              </a>
+            </li>
+           <li className="nav-item">
+              <a className="nav-link text-dark"  href="/about">
                 About
               </a>
             </li>
@@ -39,12 +41,9 @@ const Nav = () => {
               </a>
             </li>
           </ul>
-        
         </div>
-        
       </div>
     </nav>
   )
 }
-
 export default Nav

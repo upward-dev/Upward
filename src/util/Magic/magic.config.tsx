@@ -1,6 +1,5 @@
 import {Magic} from "magic-sdk";
 
-
 const createMagic = (key:string | undefined) => {
     if(key) {
         return (

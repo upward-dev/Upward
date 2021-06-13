@@ -5,19 +5,12 @@ import prisma from '../lib/prisma'
 
 export default function Home() {
   return (
-    <div className="container">
-      <Head>
-        <title>Upward</title>
-        <meta name="description" content="Advancing women in tech" />
-      </Head>
-
-      <div className="page-margin-top">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm">
-              <img src="/girl.png" width="100%" alt="upward-logo"></img>
-            </div>
-
+    <div className="page-margin-top">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">
+            <img src="/girl.png" width="100%" alt="upward-logo"></img>
+          </div>
             <div className="col-lg">
               <h1 className="title mt-5" >
                 Find an awesome role
@@ -44,7 +37,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
   )
 }
 

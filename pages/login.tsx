@@ -4,7 +4,10 @@ import {Magic} from "magic-sdk";
 import { magic } from "../src/util/Magic/magic.config";
 import {UserContext} from "../src/util/Magic/userContext";
 import Router from 'next/router';
+<<<<<<< HEAD
 import { LoginMagicSuccess, LoginMagicUser } from '../src/util/Magic/magicFunctions';
+=======
+>>>>>>> 319d6b7f917328dc17e65c7080206ad216aa1b43
 
 function Login() {
     const userContext = useContext(UserContext);
@@ -40,3 +43,4 @@ function Login() {
 }
 
 export default Login;
+
