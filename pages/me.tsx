@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { useRouter } from 'next/router';
 // import {LINKEDIN_OAUTH} from '../pages/api/linkedin'
 
-//redirect route for LinkedIn Authentication
 const Me = () => {
   //const router = useRouter(); 
   //   if (router.query.code) {  
@@ -12,7 +11,7 @@ const Me = () => {
 
   return (
     <div>
-     Welcome
+        <h1> Hello </h1>
     </div>
   );
 };

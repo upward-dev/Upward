@@ -66,29 +66,27 @@ export default function ResumeProfile() {
         }
     }, [id, setUser])
     const { firstName, lastName, email, createdAt, updatedAt, role, tasks, profile } = currentUser || {};
-
     return (
-        <div style={{ marginTop: '200px' }} className="container">
-            <div style={{ display: "flex", alignItems: "baseline" }}>
+        <div className="container page-margin-top">
                 <h4>{firstName} {lastName}</h4>
-            </div>
+          
             <div>
-                <ul style={{ listStyleType: 'none' }}>
-                    <li>
+                <ul className="list-group">
+                    <li className="list-group-item">
                         <p>Email <span>{email}</span></p>
                     </li>
-                    <li>
+                    <li className="list-group-item">
                         <p>Calendly Link: <span>{profile && profile.calendlyLink}</span></p>
                     </li>
-                    <li>
+                    <li className="list-group-item">
                         <p>role <span>{role}</span></p>
                     </li>
                 </ul>
-                <ul>
+                <ul className="list-group mt-4">
                     <h4>Tasks</h4>
                     {tasks && tasks.map((task, index) => {
                         return (
-                            <li key={index}>{task}</li>
+                            <li className="list-group-item" key={index}>{task}</li>
                         )
                     })}
                 </ul>
