@@ -10,8 +10,10 @@
     "format": "prettier --write .",
     "ci-at-home": "run-s lint build",
     "types:strict": "npx tsc --strict",
-    "watch:types:strict": "npm types:strict --watch"
-
+    "watch:types:strict": "npm types:strict --watch",
+    "create-db": "./ops/create-db.sh",
+    "migrate-db": "npx prisma generate dev",
+    "update-db": "npx prisma db push"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -21,6 +23,7 @@
     "@hookform/resolvers": "^2.5.2",
     "@popperjs/core": "^2.9.2",
     "@prisma/client": "^2.24.0",
+    "@viperidae/shipwright": "^1.7.3",
     "bootstrap": "^5.0.0-beta3",
     "dotenv": "^10.0.0",
     "jquery": "^3.6.0",
@@ -41,7 +44,7 @@
     "prettier": "^2.2.1",
     "prettier-config-standard": "^4.0.0",
     "prisma": "^2.24.0",
-    "react-hook-form": "^7.8.4",
+    "react-hook-form": "^7.8.2",
     "typescript": "^4.2.4"
   }
 }
