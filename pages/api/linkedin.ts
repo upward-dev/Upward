@@ -5,11 +5,11 @@ const LINKEDIN_REDIRECT = process.env.LINKEDIN_REDIRECT;
 const LINKEDIN_CLIENT_ID = process.env.LINKEDIN_CLIENT_ID;
 
 const getURLWithQueryParams = (base, params) => {
-//   const query = Object.entries(params)
-//     .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-//     .join("&")
-//   return `${base}?${query}`;
-};
+  //   const query = Object.entries(params)
+  //     .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+  //     .join('&')
+  //   return `${base}?${query}`
+}
 
 export const LINKEDIN_URL = getURLWithQueryParams(
   "https://www.linkedin.com/oauth/v2/authorization",
