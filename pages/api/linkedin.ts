@@ -10,16 +10,16 @@ const getURLWithQueryParams = (base, params) => {
   //   return `${base}?${query}`
 }
 
-// export const LINKEDIN_URL = getURLWithQueryParams(
-//   'https://www.linkedin.com/oauth/v2/authorization',
-//   {
-//     response_type: 'code',
-//     client_id: LINKEDIN_CLIENT_ID,
-//     redirect_uri: LINKEDIN_REDIRECT,
-//     state: LINKEDIN_STATE,
-//     scope: LINKEDIN_SCOPE
-//   }
-// )
+export const LINKEDIN_URL = getURLWithQueryParams(
+  'https://www.linkedin.com/oauth/v2/authorization',
+  {
+    response_type: 'code',
+    client_id: LINKEDIN_CLIENT_ID,
+    redirect_uri: LINKEDIN_REDIRECT,
+    state: LINKEDIN_STATE,
+    scope: LINKEDIN_SCOPE
+  }
+)
 export const LINKEDIN_OAUTH = async (code) => {
   //   console.log('coke', code)
   //   const LINKEDIN_URL = getURLWithQueryParams(
