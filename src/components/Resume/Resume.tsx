@@ -1,22 +1,27 @@
 import React from 'react'
 import { ProjectResume } from './ProjectResume/ProjectResume'
 import './Resume.module.scss'
-import {ExperienceResume} from './ExperienceResume/ExperienceResume'
+import AboutResume from './AboutResume/AboutResume'
+import { ExperienceResume } from './ExperienceResume/ExperienceResume'
 
-interface ResumeProps{
-  userId: string;
+interface ResumeProps {
+  userId: string
   /*
   add other props here
   */
 }
-const Resume = ({userId}:ResumeProps) => {
+
+//TODO: onSubmit whole Resume
+
+const Resume = ({ userId }: ResumeProps) => {
   return (
-    <div>
+    <div className="page-margin-top px-4">
       <h1>Build Your Online Resume:</h1>
-      <ProjectResume userId={userId}/> 
-      <ExperienceResume /> 
+      <AboutResume />
+      <ProjectResume userId={userId} />
+      <ExperienceResume />
     </div>
   )
 }
 
-export default Resume;
+export default Resume

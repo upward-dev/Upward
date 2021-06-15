@@ -99,7 +99,7 @@ const ExperienceCard = () => {
             className="form-control"
             aria-label="With textarea"
             {...register('accomplishments')}
-            placeholder="Accomplishments (List at least 3)"
+            placeholder="Accomplishments (List at least 3) What did you build? What was the impact for the business? What was your role? What technologies did you use?"
             id="accomplishments"
             rows="3"
           />
