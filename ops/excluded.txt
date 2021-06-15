@@ -1,0 +1,6 @@
+node_modules
+.gitignore
+docs
+ops
+.vscode
+source.tar.gz
