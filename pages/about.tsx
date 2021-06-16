@@ -46,27 +46,42 @@ function About() {
               linkedin="https://www.linkedin.com/in/ainneoum/"
               bio="Ainne is a Frontend Engineer with expertize in React and responsive design. She is passionate about mentoring other women and is currently managing and leading the Women Who Code SF chapter."></SpotlightCard>
           </div>
-          <hr className="dotted"/> 
-          <h1 className="text-center"> Contributors </h1>
+
           <br/>
           <div className="container">
             <div className="row">
               <SpotlightCard
-                name="Alice Davis"
-                image="/alicedavis.jpeg"  
-                role="Full Stack Engineer"
-                linkedin="https://www.linkedin.com/in/diffalot/"></SpotlightCard>
+               name='Rachael Concessio'
+               image="/rachaelconcessio.jpeg"
+               role="Front End Engineer"
+               linkedin="https://www.linkedin.com/in/rachael-concessio-1272441a7/"
+               bio="Rachael is a Frontend Engineer with experience in React and creating well-designed websites. She is passionate about using her skills to create an impact and loves to network and collaborate with other developers.">
+               </SpotlightCard>             
               <SpotlightCard
                 name="Bailey Ritchie"
                 image="/baileyritchie.jpeg"              
                 role="Full Stack Engineer"
-
+                bio="Bailey is a full-stack developer with experience in developing responsive web applications in React and Node. As a career transitioner herself, she is focused on helping women succeed in the tech industry through mentorship, education and her contributions to various open source projects."
                 linkedin="https://www.linkedin.com/in/bailey-ritchie-568569142/"></SpotlightCard>
               <SpotlightCard
                 name="Eula Bengo"
                 role="Full Stack Engineer"                
                 image="/eulabengco.jpeg"              
                 linkedin="https://www.linkedin.com/in/eulabengco/"></SpotlightCard>
+          
+            </div>
+          </div>
+
+          <div className="container">
+            <div className="row">
+
+              <SpotlightCard
+                name="Nicole Pasquale"
+                role="Full Stack Engineer"                
+                image="/nicole.jpeg"     
+                bio="Full Stack Developer with a passion for learning and working to find optimal solutions for difficult to solve problems. Skilled in HTML, CSS, JavaScript, ReactJS, TypeScript, WordPress, Node.js, Express.js, MySQL, and additional technologies. Collaborative and dependable team-player with a desire to develop dynamic, efficient, and responsive full stack web applications."         
+                linkedin="https://www.linkedin.com/in/nicole-pasquale//"></SpotlightCard>
+
             </div>
           </div>
           <hr className="dotted"/> 
