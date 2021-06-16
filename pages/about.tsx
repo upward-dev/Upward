@@ -68,7 +68,6 @@ function About() {
                 role="Full Stack Engineer"                
                 image="/eulabengco.jpeg"              
                 linkedin="https://www.linkedin.com/in/eulabengco/"></SpotlightCard>
-          
             </div>
           </div>
 
