@@ -40,7 +40,7 @@ npm run create-db
 
 We use [prisma](https://www.prisma.io/nextjs#nextjs-tabs) as an ORM to postgres to connect directly to the database. See example in index.tsx
 
-Download the [prisma studio](https://github.com/prisma/studio/releases) to connect directly to the heroku database:
+Download the [prisma studio](https://www.prisma.io/studio) to connect directly to the heroku database:
 
 For development: prisma will connect to your local Docker container
 
