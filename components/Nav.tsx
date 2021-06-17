@@ -3,7 +3,7 @@ const Nav = () => {
     <nav className="navbar navbar-expand-sm fixed-top navbar-light bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
-          <img src="/upward-logo.svg" width="150" alt="upward-logo"></img>
+          <img className="img-responsive" src="/upward-logo.svg" width="150" alt="upward-logo"></img>
         </a>
         {/* 
         **** button for when we add more documents DO NOT delete!
@@ -31,6 +31,12 @@ const Nav = () => {
                 About
               </a>
             </li>
+           <li className="nav-item">
+              <a className="nav-link text-dark"  href="/blog">
+                Blog
+              </a>
+            </li>
+
             <li className="rounded btn-secondary" >
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdC-AbV2SNhMS99yhY6r4Gu34UC9DhVWIM7utII6irV1pyaSw/viewform"
