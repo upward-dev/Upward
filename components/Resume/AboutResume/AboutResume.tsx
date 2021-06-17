@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { useForm } from 'react-hook-form'
 import prisma from '../../../lib/prisma'
 import { PrismaClient } from '@prisma/client'
@@ -12,31 +12,17 @@ type AboutValues = {
   personalWebsite: string
 }
 
-interface AboutProps {
-  isHidden: boolean
-  isSubmitted: boolean
+interface Props {
+  locationsProps?: []
+  roleTypesProps?: []
 }
-
-export async function getStaticProps() {
-  const prisma = new PrismaClient()
-  const locationProps = await prisma.location.findMany()
-  return {
-    props: { locationProps }
-  }
-}
-
-const locations = 'REMOTE BAY_AREA NEW_YORK AUSTIN DENVER SEATTLE BOSTON WASHINGTON SAN_DIEGO LOS_ANGELES DALLAS CHICAGO HOUSTON PHOENIX PHILADELPHIA'.split(
-  ' '
-)
 
 const visas = 'NEW_H1B TRANSFER_H1B TN_VISA F1 NONE'.split(' ')
 
-export default function AboutResume(
-  { isHidden, isSubmitted }: AboutProps,
-  { locationProps }
-) {
+const AboutResume: React.FC<Props> = ({ children, ...props }) => {
+  const locationsArr = props.locationsProps
+  const rolesArr = props.roleTypesProps
   const { register, watch } = useForm<AboutValues>()
-  console.log('locationProps', locationProps)
   return (
     <div className="page-margin-top card px-3">
       <div className="card-body">
@@ -136,7 +122,7 @@ export default function AboutResume(
       <div className="card-body">
         <div className="row align-items-start">
           <span className="col">
-            <h5 className="card-title">What You're Looking For</h5>{' '}
+            <h5 className="card-title">What You're Looking For</h5>
           </span>
         </div>
         <div className="input-group mb-3">
@@ -146,13 +132,14 @@ export default function AboutResume(
             id="inputGroup-sizing-default">
             Location
           </label>
-          {/* 
-        take values from DB
-        */}
-          {locations.map((c, i) => (
-            <label key={c}>
-              <input type="checkbox" value={c} name={'withIndex.' + i * 2} />
-              {c}
+          {locationsArr.map((obj) => (
+            <label key={obj.id}>
+              <input
+                type="checkbox"
+                value={obj.location}
+                name={'withIndex.' + obj.id * 2}
+              />
+              {obj.location}
             </label>
           ))}
         </div>
@@ -162,8 +149,18 @@ export default function AboutResume(
             Role:
           </label>
           {
-            //map Role from DB
+            //map Role from DB rolesArr
           }
+          {rolesArr.map((obj) => (
+            <label key={obj.id}>
+              <input
+                type="checkbox"
+                value={obj.type}
+                name={'withIndex.' + obj.id * 2}
+              />
+              {obj.type}
+            </label>
+          ))}
         </div>
 
         <div className="input-group mb-3">
@@ -193,13 +190,13 @@ export default function AboutResume(
             aria-label="User Title"
             {...register('userTitle')}>
             <option selected>Select Visa</option>
-            {
-              visas.map((c, i) => (
-            <option key={c} value={c} name={'withIndex.' + i * 2}>{c}</option>
-          ))}  
+            {visas.map((c, i) => (
+              <option key={c} value={c} name={'withIndex.' + i * 2}>
+                {c}
+              </option>
+            ))}
           </select>
         </div>
-
         <div className="input-group mb-3">
           <label
             htmlFor="Portfolio Website"
@@ -213,17 +210,19 @@ export default function AboutResume(
             placeholder="To be a manager leading a team of developers"
           />
         </div>
-      </div>
-      <div className="input-group mb-3">
-        <label className="input-group-text" id="inputGroup-sizing-default">
-          Reason for Looking:
-        </label>
-        <input
-          className="form-control"
-          type="text"
-          placeholder="To learn new tech stacks and career growth."
-        />
+        <div className="input-group mb-3">
+          <label className="input-group-text" id="inputGroup-sizing-default">
+            Reason for Looking:
+          </label>
+          <input
+            className="form-control"
+            type="text"
+            placeholder="To learn new tech stacks and career growth."
+          />
+        </div>
       </div>
     </div>
   )
 }
+
+export default AboutResume
