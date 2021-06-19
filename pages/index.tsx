@@ -16,15 +16,14 @@ export default function Home() {
                 Find an awesome role
               </h1>
               <p>
-                We provide you all the tools needed for you to land un upleveled job:
+                It's free for candidates! Sign up to:
               </p>
               <p>
                 <ul>
-                  <li> Companies apply to interview you </li>
-                  <li> Create an online resume with our profile builder specifically for software engineers </li>
-                  <li> Access to technical interview preparation materials </li>
+                  <li> Get companies to apply to interview you </li>
+                  <li> Create a sharable online resume with our profile builder specialized for software engineers </li>
+                  <li> Access technical interview preparation materials, workshops and mentorship </li>
                   <li> Schedule technical and non techncial mock interviews with engineering executives </li>
-                  <li> Access interviewing bootcamps, workshops and mentors </li>
                 </ul>
               </p>
               <div>
