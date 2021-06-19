@@ -2,13 +2,31 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 function LoginForm() {
+    const onSubmit = async (e: object) => {
+        // e.preventDefault();
+        // await primsa db response
+        console.log(e);
+    };
+
+    const validate = (values: object) => {
+        return {};
+    };
+
+    const {register, handleSubmit} = useForm({
+        // onSubmit,
+        // validate
+    });
+
+    const userEmail = register('userEmail');
+    const userPassword = register('userPassword');
+
     return (
 
         <form  className="border rounded p-3 login-form">
 
             <h2 className="text-center fs-5 mb-4">Login</h2>
             <div className="mb-3">
-                <input placeholder="Email Address" className="form-control" required/>
+                <input {...userEmail} placeholder="Email Address" className="form-control" required/>
              {/*   {userEmail.meta.touched && userEmail.meta.error && (
                 <span>{userEmail.meta.error}</span>
                 )}*/}
