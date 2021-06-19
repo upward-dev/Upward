@@ -43,6 +43,7 @@ function About() {
               name="Ainne Oum"
               role="Lead Front End Engineer"
               image="/ainneoum.png"
+              website="https://ainneoum.netlify.app/"
               linkedin="https://www.linkedin.com/in/ainneoum/"
               bio="Ainne is a Frontend Engineer with expertize in React and responsive design. She is passionate about mentoring other women and is currently managing and leading the Women Who Code SF chapter."></SpotlightCard>
           </div>
@@ -62,18 +63,20 @@ function About() {
                 image="/baileyritchie.jpeg"              
                 role="Full Stack Engineer"
                 bio="Bailey is a full-stack developer with experience in developing responsive web applications in React and Node. As a career transitioner herself, she is focused on helping women succeed in the tech industry through mentorship, education and her contributions to various open source projects."
+                website="http://baileyritchie.com/"
                 linkedin="https://www.linkedin.com/in/bailey-ritchie-568569142/"></SpotlightCard>
               <SpotlightCard
                 name="Eula Bengo"
                 role="Full Stack Engineer"                
-                image="/eulabengco.jpeg"              
+                image="/eulabengco.jpeg"    
+                bio="Eula is a well-accomplished full stack engineer with experience in building web applications from conceptualization, architecture, development all the way to release. She has a passion for clean code and intuitive UI that elevate user experience. A forward thinker and problem solver, she loves learning new things and sharing her knowledge through networking and mentoring."   
+                website="https://eulabeng.co/"       
                 linkedin="https://www.linkedin.com/in/eulabengco/"></SpotlightCard>
             </div>
           </div>
 
           <div className="container">
             <div className="row">
-
               <SpotlightCard
                 name="Nicole Pasquale"
                 role="Full Stack Engineer"                
