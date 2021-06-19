@@ -1,6 +1,6 @@
 // helper functions to call the backend api for experience resume related queries
 
-const URL = '/api/experiences'; // TODO - place in config files later?
+const URL = '/api/resume'; // TODO - place in config files later?
 
 export const experienceService = {
   create
