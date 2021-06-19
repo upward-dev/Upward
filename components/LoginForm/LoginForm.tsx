@@ -2,8 +2,6 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 function LoginForm() {
-
-
     const onSubmit = async (e: object) => {
         // e.preventDefault();
         // await primsa db response
@@ -21,11 +19,12 @@ function LoginForm() {
 
     const userEmail = register('userEmail');
     const userPassword = register('userPassword');
-    
-    return(
-        <form  className="border rounded p-3">
-            <h1 className="text-center fs-3">Welcome Back!</h1>
-            <h2 className="text-center fs-5 mb-4">Login to your Upward account.</h2>
+
+    return (
+
+        <form  className="border rounded p-3 login-form">
+
+            <h2 className="text-center fs-5 mb-4">Login</h2>
             <div className="mb-3">
                 <input {...userEmail} placeholder="Email Address" className="form-control" required/>
              {/*   {userEmail.meta.touched && userEmail.meta.error && (
@@ -38,14 +37,16 @@ function LoginForm() {
                 <span>{userPassword.meta.error}</span>
                 )}*/}
             </div>
-            <div className="d-grid gap-2 col-6 mx-auto">
-                <button type="submit"className="btn btn-primary">Submit</button>
+
+            <br/>
+            <div className="d-grid gap-2 col-6 mx-auto rounded btn-secondary">
+                <button type="submit" className="btn btn-lg active text-dark ">Sign In</button>
             </div>
             <div className="text-center my-2">
                 New to Upward? <a href="/register">Register now</a>
             </div>
         </form>
-    );
+    )
 }
 
 export default LoginForm;

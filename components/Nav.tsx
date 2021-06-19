@@ -37,13 +37,19 @@ const Nav = () => {
               </a>
             </li>
 
+           <li className="nav-item">
+              <a className="nav-link text-dark"  href="/login">
+                Login
+              </a>
+            </li>
+
             <li className="rounded btn-secondary" >
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdC-AbV2SNhMS99yhY6r4Gu34UC9DhVWIM7utII6irV1pyaSw/viewform"
                 className="btn btn- active text-dark "
                 >
                 <i className="glyphicon-floppy-disk" aria-hidden="true"></i>
-                Join the waitlist
+                Register
               </a>
             </li>
           </ul>

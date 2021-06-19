@@ -16,10 +16,16 @@ export default function Home() {
                 Find an awesome role
               </h1>
               <p>
-                Our mission is to advance women in tech through mentorship during the job search process.
+                We provide you all the tools needed for you to land un upleveled job:
               </p>
               <p>
-                Join the waitlist to receive career coaching from engineering leaders, prepare for technical interviews and connect with hiring managers at fast growing, inclusive and diverse startups.
+                <ul>
+                  <li> Companies apply to interview you </li>
+                  <li> Create an online resume with our profile builder specifically for software engineers </li>
+                  <li> Access to technical interview preparation materials </li>
+                  <li> Schedule technical and non techncial mock interviews with engineering executives </li>
+                  <li> Access interviewing bootcamps, workshops and mentors </li>
+                </ul>
               </p>
               <div>
                 <a
@@ -29,7 +35,7 @@ export default function Home() {
     
                     type="button"
                     className="btn btn-secondary">
-                    Join the waitlist
+                    Register
                   </button>
                 </a>
               </div>
