@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import prisma from '../../../lib/prisma'
 import { PrismaClient } from '@prisma/client'
 
-type AboutValues = {
+type BasicInfoValues = {
   firstName: string
   lastName: string
   email: string
@@ -12,12 +12,42 @@ type AboutValues = {
   personalWebsite: string
 }
 
+type LookingForValues = {
+  location: []
+  role: []
+  companySize: []
+  compensationMin: number
+  compensationMax: number
+  visaNeeded: string
+  ambitionThreeYears: string
+  reasonForLooking: string
+}
+
+type TechnologyValues = {
+  frontEnd: []
+  backEnd: []
+  Database: []
+  Infrastructure: []
+}
+
+type AboutValues = {
+  BasicInfoValues
+  LookingForValues
+  TechnologyValues
+}
+
 interface Props {
   locationsProps?: []
   roleTypesProps?: []
 }
 
+const locations = 'REMOTE BAY_AREA NEW_YORK AUSTIN DENVER SEATTLE BOSTON WASHINGTON SAN_DIEGO LOS_ANGELES DALLAS CHICAGO HOUSTON PHOENIX PHILADELPHIA'.split(
+  ' '
+)
 const visas = 'NEW_H1B TRANSFER_H1B TN_VISA F1 NONE'.split(' ')
+const sizes = 'SEED_10 SERIES_A_10_30 SERIES_B_30_100 SERIES_C_D_E_F_100_PLUS PUBLIC_COMPANY NO_PREFERENCE'.split(
+  ' '
+)
 
 const AboutResume: React.FC<Props> = ({ children, ...props }) => {
   const locationsArr = props.locationsProps
@@ -125,42 +155,81 @@ const AboutResume: React.FC<Props> = ({ children, ...props }) => {
             <h5 className="card-title">What You're Looking For</h5>
           </span>
         </div>
-        <div className="input-group mb-3">
-          <label
-            htmlFor="firstName"
-            className="input-group-text"
-            id="inputGroup-sizing-default">
-            Location
+        <div className="input-group d-flex align-items-center mb-3">
+          <label className="input-group-text align-self-start me-4">
+            Location:
           </label>
-          {locationsArr.map((obj) => (
-            <label key={obj.id}>
-              <input
-                type="checkbox"
-                value={obj.location}
-                name={'withIndex.' + obj.id * 2}
-              />
-              {obj.location}
-            </label>
-          ))}
+          <div className="align-self-start">
+            {locations.map((item, i) => (
+              <div className="form-check">
+                <label key={i} className="form-check-label">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value={item}
+                    name={'withIndex.' + i * 2}
+                  />
+                  {item}
+                </label>
+              </div>
+            ))}
+          </div>
+          <div>
+            {
+              // {locationsArr.map((obj) => (
+              // <label key={obj.id}>
+              //   <input
+              //     type="checkbox"
+              //     value={obj.location}
+              //     name={'withIndex.' + obj.id * 2}
+              //   />
+              //   {obj.location}
+              //</label>
+              //))}
+            }
+          </div>
         </div>
 
-        <div className="input-group mb-3">
-          <label className="input-group-text" id="inputGroup-sizing-default">
+        <div className="input-group d-flex align-items-center mb-3">
+          <label className="input-group-text align-self-start me-4">
             Role:
           </label>
-          {
-            //map Role from DB rolesArr
-          }
-          {rolesArr.map((obj) => (
-            <label key={obj.id}>
-              <input
-                type="checkbox"
-                value={obj.type}
-                name={'withIndex.' + obj.id * 2}
-              />
-              {obj.type}
-            </label>
-          ))}
+          <div className="align-self-start">
+            {rolesArr.map((obj) => (
+              <div className="form-check">
+                <label key={obj.id} className="form-check-label">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value={obj.type}
+                    name={'withIndex.' + obj.id * 2}
+                  />
+                  {obj.type}
+                </label>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="input-group d-flex align-items-center mb-3">
+          <label className="input-group-text align-self-start me-4">
+            Company Size:
+          </label>{' '}
+          <div className="align-self-start">
+            {sizes.map((item, i) => (
+              <div className="form-check">
+                <label key={i} className="form-check-label">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value={item}
+                    name={'withIndex.' + i * 2}
+                  />
+                  {item}
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="input-group mb-3">
@@ -168,13 +237,20 @@ const AboutResume: React.FC<Props> = ({ children, ...props }) => {
             htmlFor="email"
             className="input-group-text"
             id="inputGroup-sizing-default">
-            Compensation
+            Compensation:
           </label>
           <input
-            {...register('email')}
+            {...register('compensationMin')}
             className="form-control"
             type="text"
-            placeholder="janedoe@email.com"
+            placeholder="100,000"
+          />
+          <span className="ms-2 me-2">{' - '}</span>
+          <input
+            {...register('compensationMax')}
+            className="form-control"
+            type="text"
+            placeholder="150,000"
           />
         </div>
 
@@ -219,6 +295,98 @@ const AboutResume: React.FC<Props> = ({ children, ...props }) => {
             type="text"
             placeholder="To learn new tech stacks and career growth."
           />
+        </div>
+      </div>
+
+      <div className="card-body">
+        <div className="row align-items-start">
+          <span className="col">
+            <h5 className="card-title">Technologoies</h5>
+          </span>
+        </div>
+        <div className="input-group d-flex align-items-center mb-3">
+          <label className="input-group-text align-self-start me-4">
+            Frontend Technology:
+          </label>
+          <div className="align-self-start">
+            {/* {locations.map((item, i) => (
+              <div className="form-check">
+                <label key={i} className="form-check-label">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value={item}
+                    name={'withIndex.' + i * 2}
+                  />
+                  {item}
+                </label>
+              </div>
+            ))} */}
+          </div>
+          <div></div>
+        </div>
+
+        <div className="input-group d-flex align-items-center mb-3">
+          <label className="input-group-text align-self-start me-4">
+            Backend Technology:
+          </label>
+          <div className="align-self-start">
+            {/* {rolesArr.map((obj) => (
+              <div className="form-check">
+                <label key={obj.id} className="form-check-label">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value={obj.type}
+                    name={'withIndex.' + obj.id * 2}
+                  />
+                  {obj.type}
+                </label>
+              </div>
+            ))} */}
+          </div>
+        </div>
+
+        <div className="input-group d-flex align-items-center mb-3">
+          <label className="input-group-text align-self-start me-4">
+            Operations Technology:
+          </label>{' '}
+          <div className="align-self-start">
+            {/* {sizes.map((item, i) => (
+              <div className="form-check">
+                <label key={i} className="form-check-label">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value={item}
+                    name={'withIndex.' + i * 2}
+                  />
+                  {item}
+                </label>
+              </div>
+            ))} */}
+          </div>
+        </div>
+
+        <div className="input-group d-flex align-items-center mb-3">
+          <label className="input-group-text align-self-start me-4">
+            Storage Technology:
+          </label>{' '}
+          <div className="align-self-start">
+            {/* {sizes.map((item, i) => (
+              <div className="form-check">
+                <label key={i} className="form-check-label">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value={item}
+                    name={'withIndex.' + i * 2}
+                  />
+                  {item}
+                </label>
+              </div>
+            ))} */}
+          </div>
         </div>
       </div>
     </div>

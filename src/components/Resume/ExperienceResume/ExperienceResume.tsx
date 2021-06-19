@@ -158,3 +158,5 @@ const ExperienceCard = () => {
     </div>
   )
 }
+
+export default ExperienceResume

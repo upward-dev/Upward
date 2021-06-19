@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Experience } from '../components/Experience'
+import { ExperienceResume } from '../components/Resume/ExperienceResume/ExperienceResume'
 import { Project } from '../components/Project'
 import About from '../components/Resume/AboutResume/AboutResume'
 import prisma from '../lib/prisma'
@@ -8,6 +8,10 @@ interface LocationsI {
   id: number
   location: string
 }
+interface RolesI {
+  id: number
+  type: string
+}
 
 export async function getStaticProps() {
   const locations: LocationsI[] = await prisma.locationWanted.findMany()
@@ -15,7 +19,7 @@ export async function getStaticProps() {
   const backEnd = await prisma.backendTechnology.findMany()
   const operations = await prisma.operationsTechnology.findMany()
   const storages = await prisma.storageTechnology.findMany()
-  const roleTypes = await prisma.roleType.findMany()
+  const roleTypes: RolesI[] = await prisma.roleType.findMany()
   return {
     props: { locations, frontEnd, backEnd, operations, storages, roleTypes }
   }
@@ -75,7 +79,7 @@ function OnlineResume({
           roleTypesProps={roleTypes}
         />
         <Project isHidden={!showProject} isSubmitted={false} />
-        <Experience isHidden={!showExperience} isSubmitted={false} />
+        <ExperienceResume isHidden={!showExperience} isSubmitted={false} />
       </section>
     </div>
   )
