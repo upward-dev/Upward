@@ -23,7 +23,7 @@ export const UserContextProvider: React.FC = (props) => {
         user,
         setUser
     }
-    console.log(values);
+  
     return (
         <UserContext.Provider value={values}>
             {props.children}

@@ -1,6 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import { route } from 'next/dist/next-server/server/router'
 import React, { useContext, useEffect, useState } from 'react'
+import { magic } from '../../src/util/Magic/magic.config';
 import { UserContext } from "../../src/util/Magic/userContext"
 
 // needs to be replaced with real api call for data for final
@@ -24,6 +25,7 @@ interface iUser {
     tasks: string[],
     profile: Profile
 }
+
 
 
 // fake user data
@@ -60,12 +62,10 @@ export default function ResumeProfile() {
     const router = useRouter();
     const {user} = useContext(UserContext);
     const { id } = router.query;
+    console.log(user);
     return (
         <div className="container page-margin-top">
-            {user?.loading ?  (
-                <p>Loading..</p>
-            ): (
-                user && (      
+          {(user && (      
                 <ul className="list-group">
                     <li className="list-group-item">
                         <p>Email <span>{user.email}</span></p>

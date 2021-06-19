@@ -1,4 +1,8 @@
+import { magic } from "../src/util/Magic/magic.config"
+
 const Nav = () => {
+  
+
   return (
     <nav className="navbar navbar-expand-sm fixed-top navbar-light bg-light">
       <div className="container-fluid">
@@ -31,6 +35,7 @@ const Nav = () => {
                 About
               </a>
             </li>
+
             <li className="rounded btn-secondary" >
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdC-AbV2SNhMS99yhY6r4Gu34UC9DhVWIM7utII6irV1pyaSw/viewform"
@@ -40,6 +45,7 @@ const Nav = () => {
                 Join the waitlist
               </a>
             </li>
+         
           </ul>
         </div>
       </div>

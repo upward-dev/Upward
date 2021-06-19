@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-function LoginForm({submitForm}) {
+function LoginForm({submitForm,submitLinkedin}) {
 
     const onSubmit = async (e: object) => {
         // e.preventDefault();
@@ -20,13 +20,15 @@ function LoginForm({submitForm}) {
 
     const userEmail = register('userEmail');
     const userPassword = register('userPassword');
+ 
     
     return(
-        <form  className="border rounded p-3">
+        <div className="border rounded p-3 text-center">
+        <form  onClick={(e) => submitForm(e,userEmail)} >
             <h1 className="text-center fs-3">Welcome Back!</h1>
             <h2 className="text-center fs-5 mb-4">Login to your Upward account.</h2>
             <div className="mb-3">
-                <input {...userEmail} placeholder="Email Address" className="form-control" required/>
+                <input {...userEmail} placeholder="Email Address"  className="form-control" required/>
              {/*   {userEmail.meta.touched && userEmail.meta.error && (
                 <span>{userEmail.meta.error}</span>
                 )}*/}
@@ -38,12 +40,17 @@ function LoginForm({submitForm}) {
                 )}*/}
             </div>
             <div className="d-grid gap-2 col-6 mx-auto">
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button  type="submit" className="btn btn-primary">Submit</button>
+                <p className="text-center">OR</p> 
             </div>
-            <div className="text-center my-2">
+      
+        </form>
+        <button onClick={(e) => submitLinkedin(e,userEmail)} className="btn btn-secondary">Linkedin</button>
+        <div className="text-center my-2">
                 New to Upward? <a href="/register">Register now</a>
             </div>
-        </form>
+        </div>
+
     );
 }
 
