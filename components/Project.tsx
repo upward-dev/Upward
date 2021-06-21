@@ -35,7 +35,7 @@ const schema = yup.object().shape({
     
 })
 interface ProjectProps{
-  initialData: InputValues;
+  initialData?: InputValues;
   id?: number;
   isHidden: boolean;
   createProject?: (data:object) => Promise<void>;
