@@ -1,22 +1,36 @@
 // helper functions to call the backend api for project resume related queries
 
-const URL = '/api/projects'; // TODO - place in config files later?
+const URL = 'http://localhost:3000/api/resume'; // TODO - place in config files later? prod vs dev env
 
 export const projectService = {
-  create
+  create,
+  update,
+  get
 };
 
 function create(data) {
   const requestOptions = {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json'},
     body: JSON.stringify(data)
   };
   return fetch(URL,requestOptions).then(handleResponse);
 }
 
-function update() {
-
+function update(data) {
+  const requestOptions = {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  };
+  return fetch(URL,requestOptions).then(handleResponse);
+}
+function get(id) {
+  const requestOptions = {
+    method: 'GET'
+  }
+  // will include the id in the query params
+  return fetch(`${URL}/projects/${id}`,requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {
