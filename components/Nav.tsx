@@ -35,13 +35,7 @@ const Nav = () => {
               <a className="nav-link text-dark"  href="/blog">
                 Blog
               </a>
-            </li>
-
-           <li className="nav-item">
-              <a className="nav-link text-dark"  href="/login">
-                Login
-              </a>
-            </li>
+            </li>       
 
             <li className="rounded btn-secondary" >
               <a
@@ -49,7 +43,7 @@ const Nav = () => {
                 className="btn btn- active text-dark "
                 >
                 <i className="glyphicon-floppy-disk" aria-hidden="true"></i>
-                Register
+                Join the waitlist
               </a>
             </li>
           </ul>
