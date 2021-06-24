@@ -128,14 +128,11 @@ Node Resources:
 
 - [Node.js Documentation](https://nodejs.org/en/docs/)
 - [Learn Node.js](https://nodejs.dev/learn)
-- [W3Schools Node.js tutorial](https://www.w3schools.com/nodejs/nodejs_intro.asp)
 
 React Resources:
 
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
-- [W3Schools React Tutorial](https://www.w3schools.com/react/)
 
 ## Styles
 
 - [BootStrapp-Sass](https://getbootstrap.com/docs/5.0/customize/sass/)
--
