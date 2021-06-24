@@ -27,6 +27,7 @@ model Profile {
   userId            Int
   roleType          RoleType[]
   yearsOfExperience Int
+  email             String?
   frontEndTechnologies FrontendTechnology[]
   backEndTechnologies  BackendTechnology[]
   databases         StorageTechnology[]
@@ -226,6 +227,9 @@ enum RoleDescription {
   DEVOPS
   QA
   SECURITY
+  QA_MANAGER
+  DIRECTOR
+  VPE
 }
 
 enum Role {

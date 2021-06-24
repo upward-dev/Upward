@@ -30,7 +30,7 @@ const Nav = () => {
               <a className="nav-link text-dark"  href="/blog">
                 Blog
               </a>
-            </li>       
+            </li>
 
             <li className="rounded btn-secondary" >
               <a
