@@ -1,5 +1,5 @@
 import React from 'react';
-import RegisterForm from '../src/components/RegisterForm/RegisterForm';
+import RegisterForm from '../components/RegisterForm/RegisterForm';
 // import { LINKEDIN_URL } from "/pages/api/linkedin";
 
 function Register() {
