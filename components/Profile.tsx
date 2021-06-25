@@ -44,7 +44,7 @@ type techType = {
 }
 
 interface ProfileProps {
-  children
+  children: any
   id?: number
   locationsProps?: []
   roleTypesProps?: []
