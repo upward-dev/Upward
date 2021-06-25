@@ -15,9 +15,7 @@ const Resume = ({ userId }: ResumeProps) => {
   return (
     <div className="page-margin-top px-4">
       <h1>Build Your Online Resume:</h1>
-      <AboutResume />
       <ProjectResume userId={userId} />
-      <ExperienceResume />
     </div>
   )
 }
