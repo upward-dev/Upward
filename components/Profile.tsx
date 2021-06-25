@@ -28,6 +28,21 @@ type ProfileValues = {
   technology?: string
 }
 
+type locType = {
+  id: number
+  location: string
+}
+
+type roleType = {
+  id: number
+  type: string
+}
+
+type techType = {
+  id: string
+  technology: string
+}
+
 interface ProfileProps {
   children
   id?: number
@@ -92,13 +107,12 @@ const Profile = ({ children, ...props }: ProfileProps) => {
   } = useForm<ProfileValues>({
     resolver: yupResolver(schema)
   })
-  console.log(watch())
-  const locationsArr = props.locationsProps
-  const rolesArr = props.roleTypesProps
-  const frontEndArr = props.frontEndProps
-  const backEndArr = props.backEndProps
-  const operationsArr = props.operationsProps
-  const storagesArr = props.storagesProps
+  const locationsArr: locType[] = props.locationsProps
+  const rolesArr: roleType[] = props.roleTypesProps
+  const frontEndArr: techType[] = props.frontEndProps
+  const backEndArr: techType[] = props.backEndProps
+  const operationsArr: techType[] = props.operationsProps
+  const storagesArr: techType[] = props.storagesProps
 
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
 
@@ -232,18 +246,18 @@ const Profile = ({ children, ...props }: ProfileProps) => {
             Location:
           </label>
           <div className="align-self-start">
-            {locationsArr.map((obj) => (
+            {locationsArr.map((locObj) => (
               <div className="form-check">
-                <label key={obj.id} className="form-check-label">
+                <label key={locObj.id} className="form-check-label">
                   <input
                     className="form-check-input"
                     type="checkbox"
-                    value={obj.location}
-                    name={obj.location}
-                    id={obj.location}
+                    value={locObj.location}
+                    name={locObj.location}
+                    id={locObj.location}
                     {...register('location', { required: true })}
                   />
-                  {obj.location}
+                  {locObj.location}
                 </label>
               </div>
             ))}
@@ -327,7 +341,7 @@ const Profile = ({ children, ...props }: ProfileProps) => {
             {...register('visa')}>
             <option selected>Select a Visa</option>
             {visas.map((obj, i) => (
-              <option key={i} value={obj.visa} name={obj.visa}>
+              <option key={i} value={obj.visa}>
                 {obj.label}
               </option>
             ))}
