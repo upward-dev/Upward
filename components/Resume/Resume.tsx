@@ -1,8 +1,6 @@
 import React from 'react'
 import { ProjectResume } from './ProjectResume/ProjectResume'
 import './Resume.module.scss'
-import AboutResume from './AboutResume/AboutResume'
-import { ExperienceResume } from './ExperienceResume/ExperienceResume'
 
 interface ResumeProps {
   userId: string
