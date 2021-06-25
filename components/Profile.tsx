@@ -44,7 +44,6 @@ type techType = {
 }
 
 interface ProfileProps {
-  children: any
   id?: number
   locationsProps?: []
   roleTypesProps?: []
@@ -97,7 +96,7 @@ const sizes = [
   { size: 'NO_PREFERENCE', label: 'No Preference' }
 ]
 
-const Profile = ({ children, ...props }: ProfileProps) => {
+const Profile = ({ ...props }: ProfileProps) => {
   const {
     register,
     watch,
@@ -120,6 +119,8 @@ const Profile = ({ children, ...props }: ProfileProps) => {
     setIsSubmitted(true)
     return props.createProfile(data)
   }
+
+  console.log('wea', watch())
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="card-body">
