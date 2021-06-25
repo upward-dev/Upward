@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
 type ProfileValues = {
+  id?: string
   firstName: string
   lastName: string
   email: string
@@ -24,6 +25,7 @@ type ProfileValues = {
   backEnd: string[]
   database: string[]
   infrastructure: string[]
+  technology?: string
 }
 
 interface ProfileProps {
@@ -47,18 +49,18 @@ const schema = yup.object().shape({
   gitHubURL: yup.string().url().notRequired(),
   personalWebsite: yup.string().url().notRequired(),
   calendlyLink: yup.string().url().notRequired(),
-  location: yup.array().ensure().cast(null),
-  role: yup.array().ensure().cast(null),
-  companySize: yup.array().ensure().cast(null),
+  location: yup.array().ensure().default([]),
+  role: yup.array().ensure().default([]),
+  companySize: yup.array().ensure().default([]),
   compensationMin: yup.string(),
   compensationMax: yup.string(),
   visa: yup.string().required('Please select a visa'),
   ambition: yup.string(),
   reasonForLooking: yup.string().notRequired(),
-  frontEnd: yup.array().ensure().cast(null),
-  backEnd: yup.array().ensure().cast(null),
-  database: yup.array().ensure().cast(null),
-  infrastructure: yup.array().ensure().cast(null)
+  frontEnd: yup.array().ensure().default([]),
+  backEnd: yup.array().ensure().default([]),
+  database: yup.array().default([]),
+  infrastructure: yup.array().default([])
 })
 
 const visas = [
@@ -80,10 +82,7 @@ const sizes = [
   { size: 'NO_PREFERENCE', label: 'No Preference' }
 ]
 
-const Profile: React.FC<ProfileValues> = ({
-  children,
-  ...props
-}: ProfileProps) => {
+const Profile = ({ children, ...props }: ProfileProps) => {
   const {
     register,
     watch,
@@ -93,7 +92,6 @@ const Profile: React.FC<ProfileValues> = ({
   } = useForm<ProfileValues>({
     resolver: yupResolver(schema)
   })
-  console.log('props', props)
   console.log(watch())
   const locationsArr = props.locationsProps
   const rolesArr = props.roleTypesProps
@@ -153,6 +151,7 @@ const Profile: React.FC<ProfileValues> = ({
         </div>
 
         <div className="input-group mb-3">
+          yup{' '}
           <label htmlFor="email" className="input-group-text">
             Email:
           </label>
