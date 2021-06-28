@@ -16,7 +16,7 @@ const LinkedInLogin = ({ onSubmit }) => {
             onSubmit(provider);
           }}
           key={provider}
-          style={{ backgroundImage: `url(${provider}.png)` }}
+          // style={{ backgroundImage: `url(${provider}.png)` }}
         >
           {/* turns "google" to "Google" */}
           {provider.replace(/^\w/, (c) => c.toUpperCase())}

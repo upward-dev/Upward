@@ -1,4 +1,10 @@
+import { useContext } from "react"
+import { magic } from "../lib/Magic/magic";
+import { UserContext } from "../lib/userContext"
+import Router from 'next/router';
+import {logoutUser} from "../lib/Magic/magicFunctions";
 const Nav = () => {
+  const [user,setUser] = useContext(UserContext);
   return (
     <nav className="navbar navbar-expand-sm fixed-top navbar-light bg-light">
       <div className="container-fluid">
@@ -37,6 +43,8 @@ const Nav = () => {
               </a>
             </li>
 
+          {!user ? 
+          <>
            <li className="nav-item">
               <a className="nav-link text-dark"  href="/login">
                 Login
@@ -52,6 +60,19 @@ const Nav = () => {
                 Register
               </a>
             </li>
+            </>
+          : (
+            <>
+            <li>
+              <a className="nav-link text-dark" href="/profile">
+                {user.email}
+              </a>
+            </li>
+            <li onClick={() => logoutUser(setUser)} className="text-dark btn rounded btn-secondary ">
+              Logout
+            </li>
+            </>
+          )}
           </ul>
         </div>
       </div>

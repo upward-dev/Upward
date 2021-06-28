@@ -1,6 +1,6 @@
 // prisma calls made specifically for creating,updating,deleting portions of the users experience
 import { NextApiRequest, NextApiResponse } from 'next'
-import { PrismaClient,Prisma } from '@prisma/client'
+import { PrismaClient} from '@prisma/client'
 const prisma = new PrismaClient();
 
 export default handler;
