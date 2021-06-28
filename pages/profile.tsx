@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { useContext } from "react"
-import { ProtectedRoute } from "../components/ProtectedRoute";
 import { UserContext } from "../lib/userContext"
 import Loading from "../components/Loading";
 
