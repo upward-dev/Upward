@@ -2,7 +2,6 @@ import { useState, useEffect, useContext } from 'react'
 import Router from 'next/router'
 import { magic } from '../lib/Magic/magic'
 import LinkedInLogin from '../components/LinkedInLogin'
-import { useForm } from 'react-hook-form'
 import { UserContext } from '../lib/userContext'
 import EmailLogin from '../components/EmailLogin'
 import { authenticateWithServer } from '../lib/Magic/magicFunctions'
@@ -10,32 +9,14 @@ import { authenticateWithServer } from '../lib/Magic/magicFunctions'
 const Login = () => {
   const [disabled, setDisabled] = useState(false)
   const [user, setUser] = useContext(UserContext)
-  // const [user, setUser] = useState(null)
 
-  const onSubmit = async (e: object) => {
-    // e.preventDefault();
-    // await primsa db response
-    console.log(e)
-  }
-
-  const validate = (values: object) => {
-    return {}
-  }
-
-  const { register, handleSubmit } = useForm({
-    // onSubmit,
-    // validate
-  })
-
-  const userEmail = register('userEmail')
-  const userPassword = register('userPassword')
-
+ 
   // Redirect to /profile if the user is logged in
   useEffect(() => {
     user?.issuer && Router.push('/profile')
   }, [user])
 
-  //DO NOT DELETE!!!!
+
   async function handleLoginWithEmail(email: string) {
     try {
       setDisabled(true) // disable login button to prevent multiple emails from being triggered

@@ -2,14 +2,17 @@
 import { useContext } from 'react'
 import { UserContext } from '../lib/userContext'
 import Loading from '../components/Loading'
+import PrivateRoute from '../components/PrivateRoute'
 
 export default function Profile() {
   const [user, setUser] = useContext(UserContext)
   // check if user is logged in , if not show loading screen else
   // show profile page.
 
+
   return (
     <>
+    <PrivateRoute>
       {user?.loading ? (
         <Loading />
       ) : (
@@ -20,6 +23,7 @@ export default function Profile() {
           </div>
         )
       )}
+      </PrivateRoute>
     </>
   )
 }

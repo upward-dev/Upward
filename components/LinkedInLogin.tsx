@@ -1,16 +1,16 @@
 import { useState } from "react";
-
+import styles from "../styles/LinkedInLogin.module.scss";
 const LinkedInLogin = ({ onSubmit }) => {
   const provider = "linkedin";
   const [isRedirecting, setIsRedirecting] = useState(false);
 
   return (
     <>
-      <div className="or-login-with">Or login with</div>
+      <div className={styles.orLoginWith}>Or login with</div>
       <div key={provider}>
         <button
           type="submit"
-          className="social-btn"
+          className={styles.socialBtn}
           onClick={() => {
             setIsRedirecting(true);
             onSubmit(provider);
@@ -23,33 +23,8 @@ const LinkedInLogin = ({ onSubmit }) => {
         </button>
       </div>
 
-      {isRedirecting && <div className="redirecting">Redirecting...</div>}
-      <style jsx>{`
-        .or-login-with {
-          margin: 25px 0;
-          font-size: 12px;
-          text-align: center;
-          color: gray;
-        }
-        .social-btn {
-          cursor: pointer;
-          border-radius: 50px;
-          margin-bottom: 20px;
-          border: 1px solid #8a8a8a;
-          padding: 9px 24px 9px 35px;
-          width: 80%;
+      {isRedirecting && <div className={styles.redirecting}>Redirecting...</div>}
 
-          background-color: #fff;
-          background-size: 20px;
-          background-repeat: no-repeat;
-          background-position: 23% 50%;
-        }
-        .redirecting {
-          color: gray;
-          font-size: 12px;
-          margin-bottom: 5px;
-        }
-      `}</style>
     </>
   );
 };

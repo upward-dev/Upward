@@ -25,6 +25,7 @@ export const UserProvider = (props) => {
       setLoggedIn(false)
       if (await magic.user.isLoggedIn()) {
         let loggedInUser = await magic.user.getMetadata()
+        console.log(loggedInUser);
         setUser(loggedInUser)
         setLoggedIn(true)
       }
