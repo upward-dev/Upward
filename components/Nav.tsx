@@ -45,7 +45,20 @@ const Nav = () => {
               </a>
             </li>
 
-            {!user ? (
+            {user ? (
+              <>
+                <li>
+                  <a className="nav-link text-dark" href="/profile">
+                    {user.email}
+                  </a>
+                </li>
+                <li
+                  onClick={() => logoutUser(setUser)}
+                  className="text-dark btn rounded btn-secondary ">
+                  Logout
+                </li>
+              </>
+            ) : (
               <>
                 <li className="nav-item">
                   <a className="nav-link text-dark" href="/login">
@@ -60,19 +73,6 @@ const Nav = () => {
                     <i className="glyphicon-floppy-disk" aria-hidden="true"></i>
                     Register
                   </a>
-                </li>
-              </>
-            ) : (
-              <>
-                <li>
-                  <a className="nav-link text-dark" href="/profile">
-                    {user.email}
-                  </a>
-                </li>
-                <li
-                  onClick={() => logoutUser(setUser)}
-                  className="text-dark btn rounded btn-secondary ">
-                  Logout
                 </li>
               </>
             )}
