@@ -101,7 +101,7 @@ const ExperienceCard = () => {
             {...register('accomplishments')}
             placeholder="Accomplishments (List at least 3) What did you build? What was the impact for the business? What was your role? What technologies did you use?"
             id="accomplishments"
-            rows="3"
+            rows={3}
           />
         </div>
         <div className="input-group mb-3">
