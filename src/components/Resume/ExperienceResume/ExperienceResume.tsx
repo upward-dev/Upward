@@ -128,7 +128,7 @@ const ExperienceCard = () => {
               value=""
               id="presentDate"
             />
-            <label className="form-check-label" for="presentDate">
+            <label className="form-check-label" htmlFor="presentDate">
               Present
             </label>
           </div>
