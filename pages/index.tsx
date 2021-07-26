@@ -34,7 +34,7 @@ export default function Home() {
     
                     type="button"
                     className="btn btn-secondary">
-                    Register
+                    Join The Waitlist
                   </button>
                 </a>
               </div>

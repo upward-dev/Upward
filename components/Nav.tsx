@@ -29,13 +29,9 @@ const Nav = () => {
         {/* <div className="collapse navbar-collapse" id="navbarColor01"> */}
         <div className="primary" id="navbarColor01">
           <ul className="nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link text-dark" href="/events">
-                Events
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-dark" href="/about">
+ 
+           <li className="nav-item">
+              <a className="nav-link text-dark"  href="/about">
                 About
               </a>
             </li>
@@ -43,39 +39,17 @@ const Nav = () => {
               <a className="nav-link text-dark" href="/blog">
                 Blog
               </a>
+            </li>       
+
+            <li className="rounded btn-secondary" >
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdC-AbV2SNhMS99yhY6r4Gu34UC9DhVWIM7utII6irV1pyaSw/viewform"
+                className="btn btn- active text-dark "
+                >
+                <i className="glyphicon-floppy-disk" aria-hidden="true"></i>
+                Join the waitlist
+              </a>
             </li>
-
-            {user ? (
-              <>
-                <li>
-                  <a className="nav-link text-dark" href="/profile">
-                    {user.email}
-                  </a>
-                </li>
-                <li
-                  onClick={() => logoutUser(setUser)}
-                  className="text-dark btn rounded btn-secondary ">
-                  Logout
-                </li>
-              </>
-            ) : (
-              <>
-                <li className="nav-item">
-                  <a className="nav-link text-dark" href="/login">
-                    Login
-                  </a>
-                </li>
-
-                <li className="rounded btn-secondary">
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSdC-AbV2SNhMS99yhY6r4Gu34UC9DhVWIM7utII6irV1pyaSw/viewform"
-                    className="btn btn- active text-dark ">
-                    <i className="glyphicon-floppy-disk" aria-hidden="true"></i>
-                    Register
-                  </a>
-                </li>
-              </>
-            )}
           </ul>
         </div>
       </div>
