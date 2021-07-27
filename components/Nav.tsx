@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { UserContext } from '../lib/userContext'
 import { logoutUser } from '../lib/Magic/magicFunctions'
+import { UserContext } from '../lib/userContext'
 
 const Nav = () => {
   const [user, setUser] = useContext(UserContext)
@@ -29,9 +29,8 @@ const Nav = () => {
         {/* <div className="collapse navbar-collapse" id="navbarColor01"> */}
         <div className="primary" id="navbarColor01">
           <ul className="nav ms-auto">
- 
-           <li className="nav-item">
-              <a className="nav-link text-dark"  href="/about">
+            <li className="nav-item">
+              <a className="nav-link text-dark" href="/about">
                 About
               </a>
             </li>
@@ -39,13 +38,12 @@ const Nav = () => {
               <a className="nav-link text-dark" href="/blog">
                 Blog
               </a>
-            </li>       
+            </li>
 
-            <li className="rounded btn-secondary" >
+            <li className="rounded btn-secondary">
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdC-AbV2SNhMS99yhY6r4Gu34UC9DhVWIM7utII6irV1pyaSw/viewform"
-                className="btn btn- active text-dark "
-                >
+                className="btn btn- active text-dark ">
                 <i className="glyphicon-floppy-disk" aria-hidden="true"></i>
                 Join the waitlist
               </a>
