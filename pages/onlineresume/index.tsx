@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Experience } from '../../components/Experience'
 
 import Profile from '../../components/Profile'
 import prisma from '../../lib/prisma'
