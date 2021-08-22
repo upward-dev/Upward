@@ -3,9 +3,12 @@ import '../styles/globals.scss'
 import Layout from '../components/Layout'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
+import { UserProvider } from '../lib/userContext'
+import { useState } from 'react'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
+    <UserProvider>
     <Layout>
       <Head>
         <title>Upward</title>
@@ -26,6 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Component {...pageProps} />
     </Layout>
+    </UserProvider>
   )
 }
 
