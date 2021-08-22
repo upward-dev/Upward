@@ -22,98 +22,119 @@ model User {
 }
 
 model Profile {
-  id                Int        @id @default(autoincrement())
-  user              User       @relation(fields: [userId], references: [id])
-  userId            Int
-  roleType          RoleType[]
-  yearsOfExperience Int
-  frontEndTechnologies FrontendTechnology[]
-  backEndTechnologies  BackendTechnology[]
-  databases         StorageTechnology[]
-  operations        OperationsTechnology[]
-  locationsWanted   LocationWanted[]
-  minimumSalary     Int
-  maximumSalary     Int
-  calendlyLink      String?
-  projects          Project[]
-  experiences       Experience[]
-  linkedinUrl       String?
-  githubLink        String?
-  visaType          VisaType
+  id                    Int        @id @default(autoincrement())
+  user                  User       @relation(fields: [userId], references: [id])
+  userId                Int
+  roleType              RoleType[]
+  yearsOfExperience     Int
+  frontEndTechnologies  FrontendTechnologies[]
+  backEndTechnologies   BackendTechnologies[]
+  databases             StorageTechnologies[]
+  operations            OperationsTechnologies[]
+  minimumSalary         Int
+  maximumSalary         Int
+  calendlyLink          String?
+  projects              Project[]
+  experiences           Experience[]
+  linkedInUrl           String?
+  githubLink            String?
+  visaType              VisaType
+  desiredCompanySizes   CompanySizes[]
+  desiredLocations      Locations[]
+  desiredSeniorities    Seniorities[]
+  desiredStartupStages  StartupStages[]
 }
 
 model Task {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title              String   @db.VarChar(255)
-  description        String   @db.VarChar(255)
-  author             User?    @relation(fields: [authorId], references: [id])
-  authorId           Int?
-  status             TaskStatus  @default(OPEN)
+  id                    Int      @id @default(autoincrement())
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  title                 String   @db.VarChar(255)
+  description           String   @db.VarChar(255)
+  author                User?    @relation(fields: [authorId], references: [id])
+  authorId              Int?
+  status                TaskStatus  @default(OPEN)
 }
 
 model Project {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title              String   @db.VarChar(255)
-  description        String   @db.VarChar(255)
-  url                String?
-  from               DateTime
-  to                 DateTime
-  profile            Profile?    @relation(fields: [profileId], references: [id])
-  profileId          Int?
+  id                    Int      @id @default(autoincrement())
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  title                 String   @db.VarChar(255)
+  description           String   @db.VarChar(255)
+  url                   String?
+  from                  DateTime
+  to                    DateTime
+  profile               Profile?    @relation(fields: [profileId], references: [id])
+  profileId             Int?
 }
 
 model Experience {
-  id               Int      @id @default(autoincrement())
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
-  userTitle        String   
-  accomplishments  String 
-  location         String
-  from             DateTime
-  to               DateTime
-  profile          Profile?    @relation(fields: [profileId], references: [id])
-  profileId        Int?
-  type             ExperienceType
+  id                    Int      @id @default(autoincrement())
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  userTitle             String   
+  accomplishments       String 
+  location              String
+  from                  DateTime
+  to                    DateTime
+  profile               Profile?    @relation(fields: [profileId], references: [id])
+  profileId             Int?
+  type                  ExperienceType
 }
 
 model RoleType {
-  id      Int               @id @default(autoincrement())
-  type    RoleDescription   @default(FULLSTACK)
-  profile Profile[]         @relation(references: [id])
-}
-
-model FrontendTechnology  {
   id          Int               @id @default(autoincrement())
-  technology  FrontendTechnologies  
+  type        RoleDescription   @default(FULLSTACK)
   profile     Profile[]         @relation(references: [id])
 }
 
-model BackendTechnology  {
-  id          Int                @id @default(autoincrement())
-  technology  BackendTechnologies  
-  profile     Profile[]          @relation(references: [id])
+model FrontendTechnologies  {
+  id          Int               @id @default(autoincrement())
+  technology  FrontendTechnology  
+  profile     Profile[]         @relation(references: [id])
 }
 
-model OperationsTechnology {
-  id          Int                 @id @default(autoincrement())
-  technology  OperationsTechnologies  
-  profile     Profile[]           @relation(references: [id])
+model BackendTechnologies  {
+  id          Int               @id @default(autoincrement())
+  technology  BackendTechnology  
+  profile     Profile[]         @relation(references: [id])
 }
 
-model StorageTechnology {
-  id          Int                 @id @default(autoincrement())
-  technology  StorageTechnologies  
-  profile     Profile[]           @relation(references: [id])
+model OperationsTechnologies {
+  id          Int               @id @default(autoincrement())
+  technology  OperationsTechnology  
+  profile     Profile[]         @relation(references: [id])
 }
 
-model LocationWanted {
-  id                  Int               @id @default(autoincrement())
-  location            Locations  
-  profile Profile[]   @relation(references: [id])
+model StorageTechnologies {
+  id          Int               @id @default(autoincrement())
+  technology  StorageTechnology  
+  profile     Profile[]         @relation(references: [id])
+}
+
+model Locations {
+  id          Int               @id @default(autoincrement())
+  location    Location
+  profile     Profile[]         @relation(references: [id])
+}
+
+model StartupStages {
+  id          Int               @id @default(autoincrement())
+  startupStage StartupStage  
+  profile     Profile[]         @relation(references: [id])
+}
+
+model CompanySizes {
+  id          Int               @id @default(autoincrement())
+  companySize CompanySize  
+  profile     Profile[]         @relation(references: [id])
+}
+
+model Seniorities {
+  id          Int               @id @default(autoincrement())
+  seniority   Seniority  
+  profile     Profile[]         @relation(references: [id])
 }
 
 enum ExperienceType {
@@ -130,7 +151,7 @@ enum VisaType {
   NONE
 }
 
-enum Locations {
+enum Location {
   REMOTE
   BAY_AREA
   NEW_YORK
@@ -148,7 +169,7 @@ enum Locations {
   PHILADELPHIA
 }
 
-enum BackendTechnologies {
+enum BackendTechnology {
   CSHARP
   DJANGO
   DOTNET
@@ -165,7 +186,7 @@ enum BackendTechnologies {
   RUBY
 }
 
-enum OperationsTechnologies {
+enum OperationsTechnology {
   ANSIBLE
   AWS
   AZURE
@@ -176,7 +197,7 @@ enum OperationsTechnologies {
   TERRAFORM
 }
 
-enum StorageTechnologies {
+enum StorageTechnology {
   CASSANDRA
   COUCHDB
   DYNAMODB
@@ -190,7 +211,7 @@ enum StorageTechnologies {
   REDIS  
 }
 
-enum FrontendTechnologies {
+enum FrontendTechnology {
   ANGULAR
   EMBER
   FLOW
@@ -205,16 +226,16 @@ enum RoleDescription {
   FRONTEND
   BACKEND 
   FULLSTACK
-  MANAGER
-  DIRECTOR
-  VPE
   MACHINE_LEARNING
   DATA_SCIENCE
   INFRASTRUCTURE
   SRE
   DEVOPS
   QA
+  SECURITY
   QA_MANAGER
+  DIRECTOR
+  VPE
 }
 
 enum Role {
@@ -223,6 +244,7 @@ enum Role {
   MENTOR
   ADMIN
 }
+
 enum AuthenticationMethod {
   SELF
   LINKEDIN
@@ -232,4 +254,38 @@ enum TaskStatus {
   OPEN
   DELETED
   COMPLETED
+}
+
+enum StartupStage {
+  SEED
+  SERIES_A
+  SERIES_B
+  SERIES_C
+  SERIES_D
+  SERIES_E
+  SERIES_F
+  PUBLIC
+  NO_PREFERENCE
+}
+
+enum CompanySize {
+  RANGE_1_10
+  RANGE_11_30
+  RANGE_31_100
+  RANGE_100_250
+  RANGE_250_500
+  RANGE_500_1000
+  RANGE_1000_PLUS
+  NO_PREFERENCE
+}
+
+enum Seniority {
+  JUNIOR
+  INTERMEDIATE
+  SENIOR
+  STAFF
+  PRINCIPAL
+  MANAGER
+  VPE
+  DIRECTOR
 }
