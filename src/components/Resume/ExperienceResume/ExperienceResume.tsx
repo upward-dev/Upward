@@ -31,7 +31,6 @@ export const ExperienceResume = () => {
   return (
     <div className="container-fluid">
       <h1>Add Your Experiences</h1>
-
       <ExperienceCard />
       <button type="button" className="btn btn-secondary ">
         Add more Experience
