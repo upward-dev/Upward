@@ -1,12 +1,7 @@
 import React, { useState } from 'react'
-import { Experience } from '../../components/Experience'
 
-import Profile from '../../components/Profile'
-import prisma from '../../lib/prisma'
-
-import { Project } from '../../components/Project'
-import { projectService } from '../../services/projects'
-import { profileService } from '../../services/profile'
+import { Project } from './components/Project'
+import { projectService } from './services/projects'
 interface ProjectI {
   title: string
   description: string
@@ -15,55 +10,7 @@ interface ProjectI {
   to: Date
 }
 
-interface LocationsI {
-  id: number
-  location: string
-}
-interface RolesI {
-  id: number
-  type: string
-}
-
-interface FrontEndI {
-  id: number
-  technology: string
-}
-
-interface BackEndI {
-  id: number
-  technology: string
-}
-
-interface StorageI {
-  id: number
-  technology: string
-}
-
-interface OperationsI {
-  id: number
-  technology: string
-}
-
-export async function getStaticProps() {
-  const frontEnd: FrontEndI[] = await prisma.frontendTechnology.findMany()
-  const backEnd: BackEndI[] = await prisma.backendTechnology.findMany()
-  const operations: OperationsI[] = await prisma.operationsTechnology.findMany()
-  const storages: StorageI[] = await prisma.storageTechnology.findMany()
-  const locations: LocationsI[] = await prisma.locationWanted.findMany()
-  const roleTypes: RolesI[] = await prisma.roleType.findMany()
-  return {
-    props: { locations, frontEnd, backEnd, operations, storages, roleTypes }
-  }
-}
-
-function OnlineResume({
-  locations,
-  frontEnd,
-  backEnd,
-  operations,
-  storages,
-  roleTypes
-}) {
+function OnlineResume() {
   const [showProject, setShowProject] = useState<boolean>(false)
   const [showExperience, setShowExperience] = useState<boolean>(false)
   const createProject = (data: ProjectI) => {
@@ -73,28 +20,11 @@ function OnlineResume({
       .then(() => console.log('project added to db'))
       .catch((err) => console.log(err))
   }
-
-  const createProfile = (data) => {
-    console.log('dta about', data)
-    data = Object.assign(data, { ...data })
-    return profileService
-      .create(data)
-      .then(() => console.log('profile added to db'))
-      .catch((err) => console.log('err', err))
-  }
   return (
-    <div className=" d-flex flex-column justify-content-center align-items-center mt-5 mb-4">
-      <h2 className="mt-5">Create Your Profile</h2>
-      <div className="card">
-        <Profile
-          roleTypesProps={roleTypes}
-          locationsProps={locations}
-          frontEndProps={frontEnd}
-          backEndProps={backEnd}
-          operationsProps={operations}
-          storagesProps={storages}
-          createProfile={createProfile}
-        />
+    <div className=" d-flex flex-column min-vh-100 w-100 justify-content-center align-items-center">
+      <section className="d-flex flex-column w-sm-100 w-50 justify-content-start align-items-center">
+        <h2>Create Your Profile</h2>
+        <p>Profile section would go here....</p>
         <div
           className="w-100"
           id="accordion"
@@ -151,7 +81,7 @@ function OnlineResume({
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }

@@ -27,6 +27,7 @@ model Profile {
   userId            Int
   roleType          RoleType[]
   yearsOfExperience Int
+  email             String?
   frontEndTechnologies FrontendTechnology[]
   backEndTechnologies  BackendTechnology[]
   databases         StorageTechnology[]
@@ -40,6 +41,8 @@ model Profile {
   linkedinUrl       String?
   githubLink        String?
   visaType          VisaType
+  companySize       CompanySizes[]
+  seniority         SeniorityDesired[]
 }
 
 model Task {
@@ -113,6 +116,18 @@ model StorageTechnology {
 model LocationWanted {
   id                  Int               @id @default(autoincrement())
   location            Locations  
+  profile Profile[]   @relation(references: [id])
+}
+
+model CompanySizes {
+  id                  Int               @id @default(autoincrement())
+  company             CompanySize  
+  profile Profile[]   @relation(references: [id])
+}
+
+model SeniorityDesired {
+  id                  Int               @id @default(autoincrement())
+  seniority           Seniority  
   profile Profile[]   @relation(references: [id])
 }
 
@@ -205,16 +220,16 @@ enum RoleDescription {
   FRONTEND
   BACKEND 
   FULLSTACK
-  MANAGER
-  DIRECTOR
-  VPE
   MACHINE_LEARNING
   DATA_SCIENCE
   INFRASTRUCTURE
   SRE
   DEVOPS
   QA
+  SECURITY
   QA_MANAGER
+  DIRECTOR
+  VPE
 }
 
 enum Role {
@@ -232,4 +247,22 @@ enum TaskStatus {
   OPEN
   DELETED
   COMPLETED
+}
+
+enum Seniority {
+  JUNIOR
+  INTERMEDIATE
+  SENIOR
+  MANAGER
+  VPE
+  DIRECTOR
+}
+
+enum CompanySize {
+  SEED_10
+  SERIES_A_10_30
+  SERIES_B_30_100
+  SERIES_C_D_E_F_100_PLUS
+  PUBLIC_COMPANY
+  NO_PREFERENCE
 }
