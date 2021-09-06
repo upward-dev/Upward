@@ -1,0 +1,33 @@
+.emailForm {
+  border: 1px solid #ced4da;
+  height: 300px;
+  width: 400px;
+  padding: 0.75rem;
+}
+.emailFormTitle {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.emailFormButtonContainer {
+  background-color: #f3ced6;
+  border-radius: 0.25rem;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 0.25rem;
+  gap: 0.25rem;
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.emailFormButton {
+  color: #212529;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+}
+
+.registerContainer {
+  text-align: center;
+  margin: 1.5rem 0rem;
+}

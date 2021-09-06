@@ -1,45 +1,38 @@
-// helper functions to call the backend api for project resume related queries
+// prisma calls made specifically for creating,updating,deleting portions of the online resume
+import { NextApiRequest, NextApiResponse } from 'next'
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
 
-const URL = 'http://localhost:3000/api/resume'; // TODO - place in config files later? prod vs dev env
+export default handler
 
-export const projectService = {
-  create,
-  update,
-  get
-};
-
-function create(data) {
-  const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json'},
-    body: JSON.stringify(data)
-  };
-  return fetch(URL,requestOptions).then(handleResponse);
-}
-
-function update(data) {
-  const requestOptions = {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json'},
-    body: JSON.stringify(data)
-  };
-  return fetch(URL,requestOptions).then(handleResponse);
-}
-function get(id) {
-  const requestOptions = {
-    method: 'GET'
+function handler(req: NextApiRequest, res: NextApiResponse) {
+  switch (req.method) {
+    case 'GET':
+      return getProject(req, res)
+    case 'POST':
+      return createProject(req, res)
+    case 'PUT':
+      return updateProject(req, res)
+    case 'DELETE':
+      return deleteProject(req, res)
+    default:
+      return res.status(405).end(`Method ${req.method} not allowed.`)
   }
-  // will include the id in the query params
-  return fetch(`${URL}/projects/${id}`,requestOptions).then(handleResponse);
 }
 
-function handleResponse(response) {
-  return response.text().then(text => {
-    const data = text && JSON.parse(text);
-    if (!response.ok) {
-      const error = (data && data.message) || response.statusText;
-      return Promise.reject(error);
-    }
-    return data;
-  })
+async function createProject(req: NextApiRequest, res: NextApiResponse) {
+  try {
+    const project = await prisma.project.create({
+      data: req.body
+    })
+    return res.status(200).json(project)
+  } catch (err) {
+    return res.status(400).json({ message: err })
+  }
 }
+
+function updateProject(req: NextApiRequest, res: NextApiResponse) {}
+
+function deleteProject(req: NextApiRequest, res: NextApiResponse) {}
+
+function getProject(req: NextApiRequest, res: NextApiResponse) {}
