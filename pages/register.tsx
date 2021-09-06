@@ -1,5 +1,4 @@
 import React from 'react';
-import RegisterForm from '../components/RegisterForm/RegisterForm';
 // import { LINKEDIN_URL } from "/pages/api/linkedin";
 
 function Register() {
@@ -7,7 +6,6 @@ function Register() {
         <div className="page-margin-top">
             <div className="container text-center">
                 <section className="border rounded p-3">
-                    <RegisterForm />
                     or
                     <br></br>
                   {/*  <a href={LINKEDIN_URL}>
