@@ -27,7 +27,6 @@
     "@prisma/client": "^2.24.0",
     "@viperidae/shipwright": "^1.7.3",
     "bootstrap": "^5.0.0-beta3",
-    "dotenv": "^10.0.0",
     "jquery": "^3.6.0",
     "magic-sdk": "^4.3.0",
     "next": "^11.1.0",

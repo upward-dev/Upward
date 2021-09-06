@@ -137,6 +137,18 @@ model Seniorities {
   profile     Profile[]         @relation(references: [id])
 }
 
+model CompanySizes {
+  id                  Int               @id @default(autoincrement())
+  company             CompanySize  
+  profile Profile[]   @relation(references: [id])
+}
+
+model SeniorityDesired {
+  id                  Int               @id @default(autoincrement())
+  seniority           Seniority  
+  profile Profile[]   @relation(references: [id])
+}
+
 enum ExperienceType {
   FULL_TIME
   PART_TIME
@@ -256,6 +268,8 @@ enum TaskStatus {
   COMPLETED
 }
 
+<<<<<<< HEAD
+=======
 enum StartupStage {
   SEED
   SERIES_A
@@ -279,13 +293,29 @@ enum CompanySize {
   NO_PREFERENCE
 }
 
+>>>>>>> 24d747076c41c1540cb7f721e2b25c657b5c04b1
 enum Seniority {
   JUNIOR
   INTERMEDIATE
   SENIOR
+<<<<<<< HEAD
+  MANAGER
+  VPE
+  DIRECTOR
+}
+
+enum CompanySize {
+  SEED_10
+  SERIES_A_10_30
+  SERIES_B_30_100
+  SERIES_C_D_E_F_100_PLUS
+  PUBLIC_COMPANY
+  NO_PREFERENCE
+=======
   STAFF
   PRINCIPAL
   MANAGER
   VPE
   DIRECTOR
+>>>>>>> 24d747076c41c1540cb7f721e2b25c657b5c04b1
 }
